@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYCFOODS | Market & Catering</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header class="navbar">
+        <div class="container logo-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-utensils"></i> MYCFOODS<span>.</span>
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#menu">Nuestro Menú</a>
+                <a href="#catering">Catering</a>
+                <a href="#ubicacion">Horarios</a>
+                <a href="#carrito-section" class="btn-nav"><i class="fa-solid fa-cart-shopping"></i> Mi Pedido (<span id="cart-count">0</span>)</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero / Portada -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="brand-badge"><i class="fa-solid fa-kitchen-set"></i> MARKET & CATERING</div>
+            <h1>MYCFOODS</h1>
+            <p class="hero-subtitle">Sabor, frescura y calidad todos los días</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Armar Pedido</a>
+                <a href="https://wa.me/541176006544?text=¡Hola!%20Quisiera%20consultar%20por%20un%20servicio%20de%20catering." class="btn btn-secondary" target="_blank">Cotizar Catering</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="section bg-darker">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">01 / QUIÉNES SOMOS</span>
+                <h2>Nuestra esencia</h2>
+            </div>
+            <div class="about-card">
+                <p>Somos una pareja de cocineros que buscamos dar lo mejor de nosotros cada día.</p>
+                <p>Nos distingue la <strong>calidad</strong>, la <strong>frescura</strong> y la <strong>velocidad</strong> en cada producto que ofrecemos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menú Desplegable con Categorías -->
+    <section id="menu" class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">NUESTRA CARTA</span>
+                <h2>Seleccioná tu Categoría</h2>
+                <p>Hacé clic en los productos para desplegar detalles y agregarlos al pedido</p>
+            </div>
+
+            <div class="menu-tabs-container">
+                <input type="radio" id="tab-minutas" name="menu-tabs" checked>
+                <input type="radio" id="tab-sandwichs" name="menu-tabs">
+                <input type="radio" id="tab-ensaladas" name="menu-tabs">
+                <input type="radio" id="tab-empanadas" name="menu-tabs">
+                <input type="radio" id="tab-adicionales" name="menu-tabs">
+
+                <!-- Filtro de Categorías -->
+                <div class="tabs-header">
+                    <label for="tab-minutas" class="tab-btn">Minutas</label>
+                    <label for="tab-sandwichs" class="tab-btn">Sandwichs</label>
+                    <label for="tab-ensaladas" class="tab-btn">Ensaladas</label>
+                    <label for="tab-empanadas" class="tab-btn">Empanadas y Tartas</label>
+                    <label for="tab-adicionales" class="tab-btn">Adicionales</label>
+                </div>
+
+                <!-- Lista de Productos Desplegables -->
+                <div class="menu-accordion-grid">
+                    
+                    <!-- CATEGORÍA: MINUTAS -->
+                    <div class="accordion-item cat-minutas">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Wrap Ceasar</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Pollo, mix de lechuga, aderezo ceasar y parmesano.</p>
+                                <div class="item-action">
+                                    <span class="price">$14.500</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Wrap Ceasar', 14500)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="accordion-item cat-minutas">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Menú del Día</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Variedad y precio accesible. Sujeto a disponibilidad diario.</p>
+                                <div class="item-action">
+                                    <span class="price">$13.500</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Menú del Día', 13500)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="accordion-item cat-minutas">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Pechuga Grille</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Sin guarnición.</p>
+                                <div class="item-action">
+                                    <span class="price">$10.000</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Pechuga Grille', 10000)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="accordion-item cat-minutas">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Milanesa de Carne</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Sin guarnición.</p>
+                                <div class="item-action">
+                                    <span class="price">$12.000</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Milanesa de Carne', 12000)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="accordion-item cat-minutas">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Suprema de Pollo</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Sin guarnición.</p>
+                                <div class="item-action">
+                                    <span class="price">$9.500</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Suprema de Pollo', 9500)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- CATEGORÍA: SANDWICHS -->
+                    <div class="accordion-item cat-sandwichs">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Sandwich Completo</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Carne o pollo, lechuga, tomate, jamón y queso en pan ciabatta.</p>
+                                <div class="item-action">
+                                    <span class="price">$17.000</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Sandwich Completo', 17000)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="accordion-item cat-sandwichs">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Mila Carne/Pollo c/ J&Q</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Milanesa con jamón y queso en pan ciabatta.</p>
+                                <div class="item-action">
+                                    <span class="price">$15.000</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Mila c/ J&Q', 15000)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="accordion-item cat-sandwichs">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Sandwich De Pollo Gourmet</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Pollo grillado, pesto de tomate seco y muzzarella en pan ciabatta.</p>
+                                <div class="item-action">
+                                    <span class="price">$15.000</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Sandwich Pollo Gourmet', 15000)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- CATEGORÍA: ENSALADAS -->
+                    <div class="accordion-item cat-ensaladas">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Ensalada Completa</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Mix verdes, tomate, choclo, zanahoria y huevo duro.</p>
+                                <div class="item-action">
+                                    <span class="price">$12.000</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Ensalada Completa', 12000)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="accordion-item cat-ensaladas">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Ensalada César</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Mix verdes, pollo, parmesano y crutons.</p>
+                                <div class="item-action">
+                                    <span class="price">$13.500</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Ensalada César', 13500)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- CATEGORÍA: EMPANADAS Y TARTAS -->
+                    <div class="accordion-item cat-empanadas">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Empanadas (Unidad)</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Carne a Cuchillo, Jamón y Queso, Pollo, Espinaca y Salsa Blanca.</p>
+                                <div class="item-action">
+                                    <span class="price">$3.500</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Empanada', 3500)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="accordion-item cat-empanadas">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Tartas Individuales</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Jamón y Queso, Kabutia, Acelga, Vegetales Mixta.</p>
+                                <div class="item-action">
+                                    <span class="price">$12.000</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Tarta Individual', 12000)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- CATEGORÍA: ADICIONALES -->
+                    <div class="accordion-item cat-adicionales">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Papas Rústicas / Puré Kabutia / Arroz</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Porción adicional de 75 gs.</p>
+                                <div class="item-action">
+                                    <span class="price">$3.500</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Adicional Rústicas/Kabutia/Arroz', 3500)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="accordion-item cat-adicionales">
+                        <details>
+                            <summary class="accordion-header">
+                                <span class="prod-name"><i class="fa-solid fa-angle-right"></i> Huevos Revueltos</span>
+                                <span class="badge-click">Ver precio y agregar</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <p class="desc">Porción de 75 gs.</p>
+                                <div class="item-action">
+                                    <span class="price">$3.000</span>
+                                    <button class="btn-add" onclick="agregarAlCarrito('Huevos Revueltos', 3000)"><i class="fa-solid fa-plus"></i> Agregar al Pedido</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Carrito de Compras Interactivo -->
+    <section id="carrito-section" class="section bg-darker">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title"><i class="fa-solid fa-cart-shopping"></i> RESUMEN</span>
+                <h2>Tu Pedido</h2>
+            </div>
+
+            <div class="cart-box">
+                <!-- Aquí se generan los productos sumados/restados dinámicamente -->
+                <div id="cart-items" class="cart-items-list">
+                    <p class="empty-msg">Tu carrito está vacío. Agregá platos desde el menú.</p>
+                </div>
+
+                <div class="cart-summary">
+                    <div class="total-row">
+                        <span>Total acumulado:</span>
+                        <span id="cart-total">$0</span>
+                    </div>
+                    <p class="note">* No pagás nada en la web. El pago se realiza al recibir o retirar tu pedido.</p>
+                    <button class="btn-send-whatsapp" onclick="enviarPedidoWhatsApp()">
+                        <i class="fa-brands fa-whatsapp"></i> Enviar Pedido por WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering -->
+    <section id="catering" class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">02 / SERVICIOS</span>
+                <h2>Catering para Eventos</h2>
+            </div>
+            <div class="catering-grid">
+                <div class="catering-box">
+                    <i class="fa-solid fa-cake-candles"></i>
+                    <h3>Eventos Personales</h3>
+                    <p>Cumpleaños, aniversarios y reuniones familiares con opciones gastronómicas únicas.</p>
+                </div>
+                <div class="catering-box">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <h3>Eventos Privados</h3>
+                    <p>Atención personalizada con platos a la carta y logística adaptada a tu espacio.</p>
+                </div>
+                <div class="catering-box">
+                    <i class="fa-solid fa-building"></i>
+                    <h3>Eventos Corporativos</h3>
+                    <p>Coffee breaks, almuerzos empresariales y jornadas de trabajo con menú exclusivo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dónde Estamos y Horarios -->
+    <section id="ubicacion" class="section bg-darker">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">04 / UBICACIÓN & HORARIOS</span>
+                <h2>Dónde estamos</h2>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Dirección</h3>
+                    <p><strong>Luis Pereyra 440</strong><br>Tigre Centro</p>
+                    <small>Delivery en Tigre Centro & Take Away</small>
+                </div>
+
+                <div class="info-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>Horarios de Atención</h3>
+                    <p><strong>Lunes a Viernes:</strong> 08:00 a 20:00 hs</p>
+                    <p><strong>Sábados:</strong> 10:00 a 15:00 hs</p>
+                    <p class="text-accent"><strong>Domingos y Feriados:</strong> Cerrado</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fa-solid fa-wallet"></i>
+                    <h3>Medios de Pago</h3>
+                    <p>Efectivo</p>
+                    <p>Transferencia Bancaria</p>
+                    <p>Tarjetas de Débito / Crédito</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/541176006544?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20en%20MYCFOODS." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <blockquote class="motivational-phrase">
+                "La cocina hecha con amor no solo alimenta el cuerpo, sino que enriquece el alma y crea momentos inolvidables en cada plato."
+            </blockquote>
+
+            <div class="footer-cta">
+                <a href="https://wa.me/541176006544?text=¡Hola!%20Quiero%20consultar%20el%20menú%20del%20día." class="btn-whatsapp-footer" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Hablá con nosotros al +54 11 7600-6544
+                </a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://instagram.com/mycfoodsok" target="_blank"><i class="fa-brands fa-instagram"></i> @MYCFOODSOK</a>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 MYCFOODS · Market & Catering. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LÓGICA DEL CARRITO DIRECTA EN EL HTML -->
+    <script>
+        let carrito = [];
+
+        function agregarAlCarrito(nombre, precio) {
+            const itemExistente = carrito.find(item => item.nombre === nombre);
+            if (itemExistente) {
+                itemExistente.cantidad++;
+            } else {
+                carrito.push({ nombre, precio, cantidad: 1 });
+            }
+            actualizarCarrito();
+        }
+
+        function cambiarCantidad(nombre, cambio) {
+            const item = carrito.find(item => item.nombre === nombre);
+            if (item) {
+                item.cantidad += cambio;
+                if (item.cantidad <= 0) {
+                    carrito = carrito.filter(i => i.nombre !== nombre);
+                }
+            }
+            actualizarCarrito();
+        }
+
+        function actualizarCarrito() {
+            const container = document.getElementById('cart-items');
+            const countSpan = document.getElementById('cart-count');
+            const totalSpan = document.getElementById('cart-total');
+
+            let total = 0;
+            let totalItems = 0;
+
+            if (carrito.length === 0) {
+                container.innerHTML = '<p class="empty-msg">Tu carrito está vacío. Agregá platos desde el menú.</p>';
+                countSpan.textContent = '0';
+                totalSpan.textContent = '$0';
+                return;
+            }
+
+            container.innerHTML = '';
+            carrito.forEach(item => {
+                const subtotal = item.precio * item.cantidad;
+                total += subtotal;
+                totalItems += item.cantidad;
+
+                const row = document.createElement('div');
+                row.className = 'cart-item-row';
+                row.innerHTML = `
+                    <div class="cart-item-info">
+                        <strong>${item.nombre}</strong>
+                        <span>$${item.precio.toLocaleString('es-AR')} c/u — Subtotal: $${subtotal.toLocaleString('es-AR')}</span>
+                    </div>
+                    <div class="cart-item-controls">
+                        <button class="btn-qty" onclick="cambiarCantidad('${item.nombre}', -1)">-</button>
+                        <span class="qty-num">${item.cantidad}</span>
+                        <button class="btn-qty" onclick="cambiarCantidad('${item.nombre}', 1)">+</button>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+
+            countSpan.textContent = totalItems;
+            totalSpan.textContent = `$${total.toLocaleString('es-AR')}`;
+        }
+
+        function enviarPedidoWhatsApp() {
+            if (carrito.length === 0) {
+                alert('Por favor agrega al menos un producto a tu pedido.');
+                return;
+            }
+
+            let mensaje = '¡Hola MYCFOODS! Quisiera realizar el siguiente pedido:\n\n';
+            let total = 0;
+
+            carrito.forEach(item => {
+                const subtotal = item.precio * item.cantidad;
+                total += subtotal;
+                mensaje += `• ${item.cantidad}x ${item.nombre} - $${subtotal.toLocaleString('es-AR')}\n`;
+            });
+
+            mensaje += `\n*Total a pagar:* $${total.toLocaleString('es-AR')}\n\n`;
+            mensaje += 'Quedo a la espera para coordinar el retiro/envío y los detalles de pago.';
+
+            const numeroWhatsApp = '541176006544';
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

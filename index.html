@@ -944,12 +944,10 @@
                         <input type="text" id="cliente-direccion" placeholder="Ej: Av. Cánovas 123, Apto 2B" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #444; background: #222; color: #fff;">
                     </div>
 
-                    <!-- CAMPO DE HORARIO AGREGADO -->
-                    <div class="form-group" style="margin-bottom: 12px;">
-                        <label for="cliente-horario" style="display: block; font-size: 0.85rem; margin-bottom: 5px;">Horario deseado de Entrega / Retiro *</label>
-                        <input type="text" id="cliente-horario" placeholder="Ej: Lo antes posible / 12:30 hs / Entre 13 y 14 hs" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #444; background: #222; color: #fff;">
-                    </div>
-
+                  <div class="form-group" style="margin-bottom: 12px;">
+    <label for="cliente-horario" style="display: block; font-size: 0.85rem; margin-bottom: 5px;">Horario deseado de Entrega / Retiro *</label>
+    <input type="time" id="cliente-horario" min="09:00" max="20:00" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #444; background: #222; color: #fff;">
+</div>
                     <div class="form-group" style="margin-bottom: 12px;">
                         <label for="cliente-pago" style="display: block; font-size: 0.85rem; margin-bottom: 5px;">Forma de Pago *</label>
                         <select id="cliente-pago" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #444; background: #222; color: #fff;">

@@ -1069,33 +1069,40 @@ let carrito = [];
 const URL_MENU = "https://script.google.com/macros/s/AKfycbyDMm7YDxraBpt1i4y2IQQ04qhMt2m2ioyddeIlebtFtTIwBGEnTJOI3Iuf_7KotK0t/exec";
 
 async function cargarMenuDesdeGoogle() {
+    const detalle = document.getElementById("texto-menu-actual");
+
     try {
         const respuesta = await fetch(URL_MENU);
-        const datos = await respuesta.json();
 
-        const menu = datos.menu_dia;
-
-        if (!menu) {
-            console.error("No se encontró menu_dia");
-            return;
+        if (!respuesta.ok) {
+            throw new Error("Error HTTP: " + respuesta.status);
         }
 
-        // Cambiar descripción del menú
-        const detalle = document.getElementById("texto-menu-actual");
+        const texto = await respuesta.text();
+
+        console.log("Respuesta Google:", texto);
+
+        const datos = JSON.parse(texto);
+
+        if (!datos.menu_dia) {
+            throw new Error("No existe menu_dia en la respuesta");
+        }
+
+        const menu = datos.menu_dia;
 
         if (detalle && menu.detalle) {
             detalle.innerText = menu.detalle;
         }
 
-        // Cambiar precio visible
         const precio = document.querySelector(".cat-menu-dia .price");
 
         if (precio && menu.precio) {
-            precio.innerText = "$" + Number(menu.precio).toLocaleString("es-AR");
+            precio.innerText =
+                "$" + Number(menu.precio).toLocaleString("es-AR");
         }
 
-        // Cambiar precio utilizado por el botón Agregar
-        const botonAgregar = document.querySelector(".cat-menu-dia .btn-add");
+        const botonAgregar =
+            document.querySelector(".cat-menu-dia .btn-add");
 
         if (botonAgregar && menu.precio) {
             botonAgregar.onclick = function() {
@@ -1108,17 +1115,17 @@ async function cargarMenuDesdeGoogle() {
         }
 
     } catch (error) {
-        console.error("Error cargando el menú:", error);
 
-        // Evita que quede eternamente "Cargando menú..."
-        const detalle = document.getElementById("texto-menu-actual");
+        console.error(
+            "Error cargando el menú desde Google:",
+            error
+        );
 
         if (detalle) {
-            detalle.innerText = "Menú del día no disponible";
+            detalle.innerText = "No se pudo cargar el menú";
         }
     }
 }
-
 
 // =========================================================
 // DOM READY

@@ -1063,12 +1063,7 @@
    <!-- LÓGICA JAVASCRIPT -->
 <script>
 
-    // =========================================================
-    // DATO EDITABLE DEL MENÚ DEL DÍA
-    // Cambiá solamente el texto entre las comillas
-    // =========================================================
-    const MENU_DEL_DIA = "Bifes a la criolla con papa";
-    // =========================================================
+
 
     let carrito = [];=
 
@@ -1224,7 +1219,7 @@
             window.open(url, '_blank');
         }
     </script>
-    <script>
+<script>
 const URL_MENU = "https://script.google.com/macros/s/AKfycbyDMm7YDxraBpt1i4y2IQQ04qhMt2m2ioyddeIlebtFtTIwBGEnTJOI3Iuf_7KotK0t/exec";
 
 async function cargarMenuDesdeGoogle() {
@@ -1234,18 +1229,30 @@ async function cargarMenuDesdeGoogle() {
 
         const menu = datos.menu_dia;
 
-        if (menu) {
-            const detalle = document.getElementById("texto-menu-actual");
+        if (!menu) return;
 
-            if (detalle) {
-                detalle.innerText = menu.detalle;
-            }
+        // Actualizar detalle del menú
+        const detalle = document.getElementById("texto-menu-actual");
 
-            const precio = document.querySelector(".cat-menu-dia .price");
+        if (detalle) {
+            detalle.innerText = menu.detalle;
+        }
 
-            if (precio && menu.precio) {
-                precio.innerText = "$" + Number(menu.precio).toLocaleString("es-AR");
-            }
+        // Actualizar precio visible
+        const precio = document.querySelector(".cat-menu-dia .price");
+
+        if (precio) {
+            precio.innerText = "$" + Number(menu.precio).toLocaleString("es-AR");
+        }
+
+        // Actualizar precio que se agrega al carrito
+        const botonAgregar = document.querySelector(".cat-menu-dia .btn-add");
+
+        if (botonAgregar) {
+            botonAgregar.setAttribute(
+                "onclick",
+                `agregarDesdeMenu(this, 'Menú del Día', ${menu.precio})`
+            );
         }
 
     } catch (error) {

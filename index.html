@@ -208,7 +208,7 @@
                             <span class="badge-click">Ver detalle</span>
                         </summary>
                         <div class="accordion-body">
-                            <p class="desc" id="texto-menu-actual">Milanesa Napo con Fritas.</p>
+                            <p class="desc" id="texto-menu-actual">Cargando menú...</p>
                             <div class="item-action">
                                 <span class="price">$13.500</span>
                                 <div class="item-controls-inline">
@@ -1224,3 +1224,34 @@
             window.open(url, '_blank');
         }
     </script>
+    <script>
+const URL_MENU = "https://script.google.com/macros/s/AKfycbyDMm7YDxraBpt1i4y2IQQ04qhMt2m2ioyddeIlebtFtTIwBGEnTJOI3Iuf_7KotK0t/exec";
+
+async function cargarMenuDesdeGoogle() {
+    try {
+        const respuesta = await fetch(URL_MENU);
+        const datos = await respuesta.json();
+
+        const menu = datos.menu_dia;
+
+        if (menu) {
+            const detalle = document.getElementById("texto-menu-actual");
+
+            if (detalle) {
+                detalle.innerText = menu.detalle;
+            }
+
+            const precio = document.querySelector(".cat-menu-dia .price");
+
+            if (precio && menu.precio) {
+                precio.innerText = "$" + Number(menu.precio).toLocaleString("es-AR");
+            }
+        }
+
+    } catch (error) {
+        console.error("Error cargando el menú:", error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", cargarMenuDesdeGoogle);
+</script>

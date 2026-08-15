@@ -1060,166 +1060,12 @@
    <!-- LÓGICA JAVASCRIPT -->
 <script>
 
-   <!-- LÓGICA JAVASCRIPT -->
-<script>
+let carrito = [];
 
+// =========================================================
+// CARGAR MENÚ DEL DÍA DESDE GOOGLE SHEETS
+// =========================================================
 
-
-    let carrito = [];
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const elementoMenu = document.getElementById('texto-menu-actual');
-
-    if (elementoMenu) {
-        elementoMenu.innerText = MENU_DEL_DIA;
-    }
-});
-        function toggleDireccion() {
-            const tipo = document.getElementById('cliente-entrega').value;
-            const groupDireccion = document.getElementById('group-direccion');
-            if (tipo === 'Take Away') {
-                groupDireccion.style.display = 'none';
-            } else {
-                groupDireccion.style.display = 'block';
-            }
-        }
-
-        function modificarCantidadMenu(btn, cambio) {
-            const container = btn.closest('.qty-selector');
-            const qtyVal = container.querySelector('.qty-val');
-            let actual = parseInt(qtyVal.innerText);
-            actual += cambio;
-            if (actual < 1) actual = 1;
-            qtyVal.innerText = actual;
-        }
-
-        function agregarDesdeMenu(btn, nombre, precio) {
-            const container = btn.closest('.item-controls-inline');
-            const qtyVal = parseInt(container.querySelector('.qty-val').innerText);
-            
-            agregarAlCarrito(nombre, precio, qtyVal);
-            container.querySelector('.qty-val').innerText = 1;
-        }
-
-        function agregarAlCarrito(nombre, precio, cantidad = 1) {
-            const itemExistente = carrito.find(item => item.nombre === nombre);
-            if (itemExistente) {
-                itemExistente.cantidad += cantidad;
-            } else {
-                carrito.push({ nombre, precio, cantidad: cantidad });
-            }
-            actualizarCarritoUI();
-        }
-
-        function cambiarCantidad(index, cambio) {
-            carrito[index].cantidad += cambio;
-            if (carrito[index].cantidad <= 0) {
-                carrito.splice(index, 1);
-            }
-            actualizarCarritoUI();
-        }
-
-        function vaciarCarrito() {
-            carrito = [];
-            actualizarCarritoUI();
-        }
-
-        function actualizarCarritoUI() {
-            const container = document.getElementById('cart-items');
-            const totalEl = document.getElementById('cart-total');
-            
-            if (carrito.length === 0) {
-                container.innerHTML = '<p class="empty-msg">Tu carrito está vacío. ¡Agregá tus platos preferidos!</p>';
-                totalEl.innerText = '$0';
-                return;
-            }
-
-            let html = '';
-            let total = 0;
-
-            carrito.forEach((item, index) => {
-                const subtotal = item.precio * item.cantidad;
-                total += subtotal;
-
-                html += `
-                    <div class="cart-item-row">
-                        <div class="cart-item-info">
-                            <strong>${item.nombre}</strong>
-                            <span>$${item.precio.toLocaleString()} x ${item.cantidad} = $${subtotal.toLocaleString()}</span>
-                        </div>
-                        <div class="cart-item-controls">
-                            <button class="btn-qty" onclick="cambiarCantidad(${index}, -1)">-</button>
-                            <span>${item.cantidad}</span>
-                            <button class="btn-qty" onclick="cambiarCantidad(${index}, 1)">+</button>
-                        </div>
-                    </div>
-                `;
-            });
-
-            container.innerHTML = html;
-            totalEl.innerText = `$${total.toLocaleString()}`;
-        }
-
-        function enviarWhatsApp() {
-            if (carrito.length === 0) {
-                alert('El carrito está vacío. Agregá productos antes de pedir.');
-                return;
-            }
-
-            const nombre = document.getElementById('cliente-nombre').value.trim();
-            const tipoEntrega = document.getElementById('cliente-entrega').value;
-            const direccion = document.getElementById('cliente-direccion').value.trim();
-            const horario = document.getElementById('cliente-horario').value.trim();
-            const pago = document.getElementById('cliente-pago').value;
-            const notas = document.getElementById('cliente-notas').value.trim();
-
-            if (!nombre) {
-                alert('Por favor, ingresá tu Nombre y Apellido para el pedido.');
-                document.getElementById('cliente-nombre').focus();
-                return;
-            }
-
-            if (tipoEntrega === 'Delivery' && !direccion) {
-                alert('Por favor, ingresá tu dirección para la entrega.');
-                document.getElementById('cliente-direccion').focus();
-                return;
-            }
-
-            if (!horario) {
-                alert('Por favor, indicá el horario deseado para la entrega o retiro.');
-                document.getElementById('cliente-horario').focus();
-                return;
-            }
-
-            let mensaje = `*NUEVO PEDIDO - MYCFOODS*\n\n`;
-            mensaje += `👤 *Cliente:* ${nombre}\n`;
-            mensaje += `🛵 *Entrega:* ${tipoEntrega}\n`;
-            if (tipoEntrega === 'Delivery') {
-                mensaje += `📍 *Dirección:* ${direccion}\n`;
-            }
-            mensaje += `⏰ *Horario deseado:* ${horario}\n`;
-            mensaje += `💳 *Pago:* ${pago}\n`;
-            if (notas) {
-                mensaje += `📝 *Notas:* ${notas}\n`;
-            }
-            
-            mensaje += `\n*DETALLE DEL PEDIDO:*\n`;
-
-            let total = 0;
-            carrito.forEach(item => {
-                const subtotal = item.precio * item.cantidad;
-                total += subtotal;
-                mensaje += `• ${item.cantidad}x ${item.nombre} ($${subtotal.toLocaleString()})\n`;
-            });
-
-            mensaje += `\n💰 *TOTAL: $${total.toLocaleString()}*`;
-            
-            const telefono = "541176006544"; 
-            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-            window.open(url, '_blank');
-        }
-    </script>
-<script>
 const URL_MENU = "https://script.google.com/macros/s/AKfycbyDMm7YDxraBpt1i4y2IQQ04qhMt2m2ioyddeIlebtFtTIwBGEnTJOI3Iuf_7KotK0t/exec";
 
 async function cargarMenuDesdeGoogle() {
@@ -1229,36 +1075,402 @@ async function cargarMenuDesdeGoogle() {
 
         const menu = datos.menu_dia;
 
-        if (!menu) return;
+        if (!menu) {
+            console.error("No se encontró menu_dia");
+            return;
+        }
 
-        // Actualizar detalle del menú
+        // Cambiar descripción del menú
         const detalle = document.getElementById("texto-menu-actual");
 
-        if (detalle) {
+        if (detalle && menu.detalle) {
             detalle.innerText = menu.detalle;
         }
 
-        // Actualizar precio visible
+        // Cambiar precio visible
         const precio = document.querySelector(".cat-menu-dia .price");
 
-        if (precio) {
+        if (precio && menu.precio) {
             precio.innerText = "$" + Number(menu.precio).toLocaleString("es-AR");
         }
 
-        // Actualizar precio que se agrega al carrito
+        // Cambiar precio utilizado por el botón Agregar
         const botonAgregar = document.querySelector(".cat-menu-dia .btn-add");
 
-        if (botonAgregar) {
-            botonAgregar.setAttribute(
-                "onclick",
-                `agregarDesdeMenu(this, 'Menú del Día', ${menu.precio})`
-            );
+        if (botonAgregar && menu.precio) {
+            botonAgregar.onclick = function() {
+                agregarDesdeMenu(
+                    this,
+                    "Menú del Día",
+                    Number(menu.precio)
+                );
+            };
         }
 
     } catch (error) {
         console.error("Error cargando el menú:", error);
+
+        // Evita que quede eternamente "Cargando menú..."
+        const detalle = document.getElementById("texto-menu-actual");
+
+        if (detalle) {
+            detalle.innerText = "Menú del día no disponible";
+        }
     }
 }
 
-document.addEventListener("DOMContentLoaded", cargarMenuDesdeGoogle);
+
+// =========================================================
+// DOM READY
+// =========================================================
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Mostrar/ocultar dirección según tipo de entrega
+    toggleDireccion();
+
+    // Cargar menú desde Google
+    cargarMenuDesdeGoogle();
+
+});
+
+
+// =========================================================
+// ENTREGA
+// =========================================================
+
+function toggleDireccion() {
+
+    const tipo = document.getElementById("cliente-entrega").value;
+    const groupDireccion = document.getElementById("group-direccion");
+
+    if (tipo === "Take Away") {
+        groupDireccion.style.display = "none";
+    } else {
+        groupDireccion.style.display = "block";
+    }
+}
+
+
+// =========================================================
+// CANTIDAD EN LOS PRODUCTOS DEL MENÚ
+// =========================================================
+
+function modificarCantidadMenu(btn, cambio) {
+
+    const container = btn.closest(".qty-selector");
+
+    if (!container) return;
+
+    const qtyVal = container.querySelector(".qty-val");
+
+    if (!qtyVal) return;
+
+    let actual = parseInt(qtyVal.innerText) || 1;
+
+    actual += cambio;
+
+    if (actual < 1) {
+        actual = 1;
+    }
+
+    qtyVal.innerText = actual;
+}
+
+
+// =========================================================
+// AGREGAR PRODUCTO DESDE EL MENÚ
+// =========================================================
+
+function agregarDesdeMenu(btn, nombre, precio) {
+
+    const container = btn.closest(".item-controls-inline");
+
+    if (!container) return;
+
+    const qtyVal = container.querySelector(".qty-val");
+
+    const cantidad = qtyVal
+        ? parseInt(qtyVal.innerText) || 1
+        : 1;
+
+    agregarAlCarrito(nombre, precio, cantidad);
+
+    // Reiniciar cantidad del producto
+    if (qtyVal) {
+        qtyVal.innerText = "1";
+    }
+}
+
+
+// =========================================================
+// AGREGAR AL CARRITO
+// =========================================================
+
+function agregarAlCarrito(nombre, precio, cantidad = 1) {
+
+    const itemExistente = carrito.find(
+        item => item.nombre === nombre
+    );
+
+    if (itemExistente) {
+
+        itemExistente.cantidad += cantidad;
+
+    } else {
+
+        carrito.push({
+            nombre: nombre,
+            precio: Number(precio),
+            cantidad: cantidad
+        });
+
+    }
+
+    actualizarCarritoUI();
+}
+
+
+// =========================================================
+// CAMBIAR CANTIDAD DESDE EL CARRITO
+// =========================================================
+
+function cambiarCantidad(index, cambio) {
+
+    if (!carrito[index]) return;
+
+    carrito[index].cantidad += cambio;
+
+    if (carrito[index].cantidad <= 0) {
+        carrito.splice(index, 1);
+    }
+
+    actualizarCarritoUI();
+}
+
+
+// =========================================================
+// VACIAR CARRITO
+// =========================================================
+
+function vaciarCarrito() {
+
+    carrito = [];
+
+    actualizarCarritoUI();
+}
+
+
+// =========================================================
+// ACTUALIZAR CARRITO
+// =========================================================
+
+function actualizarCarritoUI() {
+
+    const container = document.getElementById("cart-items");
+    const totalEl = document.getElementById("cart-total");
+
+    if (!container || !totalEl) return;
+
+    if (carrito.length === 0) {
+
+        container.innerHTML =
+            '<p class="empty-msg">Tu carrito está vacío. ¡Agregá tus platos preferidos!</p>';
+
+        totalEl.innerText = "$0";
+
+        return;
+    }
+
+    let html = "";
+    let total = 0;
+
+    carrito.forEach(function(item, index) {
+
+        const subtotal = item.precio * item.cantidad;
+
+        total += subtotal;
+
+        html += `
+            <div class="cart-item-row">
+
+                <div class="cart-item-info">
+
+                    <strong>${item.nombre}</strong>
+
+                    <span>
+                        $${item.precio.toLocaleString("es-AR")}
+                        x ${item.cantidad}
+                        =
+                        $${subtotal.toLocaleString("es-AR")}
+                    </span>
+
+                </div>
+
+                <div class="cart-item-controls">
+
+                    <button
+                        class="btn-qty"
+                        onclick="cambiarCantidad(${index}, -1)"
+                    >
+                        -
+                    </button>
+
+                    <span>${item.cantidad}</span>
+
+                    <button
+                        class="btn-qty"
+                        onclick="cambiarCantidad(${index}, 1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+        `;
+    });
+
+    container.innerHTML = html;
+
+    totalEl.innerText =
+        "$" + total.toLocaleString("es-AR");
+}
+
+
+// =========================================================
+// ENVIAR PEDIDO POR WHATSAPP
+// =========================================================
+
+function enviarWhatsApp() {
+
+    if (carrito.length === 0) {
+
+        alert(
+            "El carrito está vacío. Agregá productos antes de pedir."
+        );
+
+        return;
+    }
+
+    const nombre =
+        document.getElementById("cliente-nombre").value.trim();
+
+    const tipoEntrega =
+        document.getElementById("cliente-entrega").value;
+
+    const direccion =
+        document.getElementById("cliente-direccion").value.trim();
+
+    const horario =
+        document.getElementById("cliente-horario").value.trim();
+
+    const pago =
+        document.getElementById("cliente-pago").value;
+
+    const notas =
+        document.getElementById("cliente-notas").value.trim();
+
+
+    // Validar nombre
+    if (!nombre) {
+
+        alert(
+            "Por favor, ingresá tu Nombre y Apellido para el pedido."
+        );
+
+        document.getElementById("cliente-nombre").focus();
+
+        return;
+    }
+
+
+    // Validar dirección
+    if (tipoEntrega === "Delivery" && !direccion) {
+
+        alert(
+            "Por favor, ingresá tu dirección para la entrega."
+        );
+
+        document.getElementById("cliente-direccion").focus();
+
+        return;
+    }
+
+
+    // Validar horario
+    if (!horario) {
+
+        alert(
+            "Por favor, indicá el horario deseado para la entrega o retiro."
+        );
+
+        document.getElementById("cliente-horario").focus();
+
+        return;
+    }
+
+
+    // Crear mensaje
+    let mensaje =
+        "*NUEVO PEDIDO - MYCFOODS*\n\n";
+
+    mensaje +=
+        `👤 *Cliente:* ${nombre}\n`;
+
+    mensaje +=
+        `🛵 *Entrega:* ${tipoEntrega}\n`;
+
+    if (tipoEntrega === "Delivery") {
+
+        mensaje +=
+            `📍 *Dirección:* ${direccion}\n`;
+    }
+
+    mensaje +=
+        `⏰ *Horario deseado:* ${horario}\n`;
+
+    mensaje +=
+        `💳 *Pago:* ${pago}\n`;
+
+    if (notas) {
+
+        mensaje +=
+            `📝 *Notas:* ${notas}\n`;
+    }
+
+
+    mensaje +=
+        "\n*DETALLE DEL PEDIDO:*\n";
+
+
+    let total = 0;
+
+
+    carrito.forEach(function(item) {
+
+        const subtotal =
+            item.precio * item.cantidad;
+
+        total += subtotal;
+
+        mensaje +=
+            `• ${item.cantidad}x ${item.nombre} ($${subtotal.toLocaleString("es-AR")})\n`;
+    });
+
+
+    mensaje +=
+        `\n💰 *TOTAL: $${total.toLocaleString("es-AR")}*`;
+
+
+    const telefono =
+        "541176006544";
+
+    const url =
+        `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+
+
+    window.open(url, "_blank");
+}
+
 </script>

@@ -821,3 +821,22 @@ html {
     }
 
 }
+/* Alinear Catering con el resto de la navegación */
+
+.nav-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-dropdown-btn {
+    margin: 0;
+    padding: 0;
+    line-height: inherit;
+}
+
+.nav-dropdown-content {
+    top: calc(100% + 10px);
+}

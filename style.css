@@ -883,3 +883,12 @@ html {
 .nav-dropdown:hover .nav-dropdown-content {
     display: block;
 }
+@media (max-width: 768px) {
+
+    .nav-dropdown-content {
+        max-height: 60vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+}

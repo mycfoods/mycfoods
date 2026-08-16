@@ -3152,5 +3152,37 @@ if (document.readyState === "loading") {
     actualizarPreciosBox();
 
 }
+// =========================================================
+// BOTÓN VOLVER ARRIBA
+// =========================================================
+
+const btnVolverArriba = document.getElementById("btn-volver-arriba");
+
+window.addEventListener("scroll", function() {
+
+    if (!btnVolverArriba) return;
+
+    if (window.scrollY > 400) {
+        btnVolverArriba.classList.add("visible");
+    } else {
+        btnVolverArriba.classList.remove("visible");
+    }
+
+});
+
+if (btnVolverArriba) {
+
+    btnVolverArriba.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+}    
 
 </script>

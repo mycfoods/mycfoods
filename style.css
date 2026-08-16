@@ -588,5 +588,5 @@ details[open] .prod-name i {
             rgba(11,11,11,0.70) 0%,
             rgba(11,11,11,0.95) 100%
         ),
-        url('fondo.jpg') center/cover no-repeat;
+        url('/fondo.jpg') center/cover no-repeat;
 }

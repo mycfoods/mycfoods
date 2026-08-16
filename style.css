@@ -547,7 +547,7 @@ details[open] .prod-name i {
 
 .whatsapp-float {
     position: fixed;
-    bottom: 25px;
+    bottom: 85px;
     right: 25px;
     background-color: var(--whatsapp);
     color: #ffffff;

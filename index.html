@@ -1656,4 +1656,109 @@ function enviarWhatsApp() {
     window.open(url, "_blank");
 }
 
+// =========================================================
+// SELECTOR DE SABORES DEL BOX (con tope exacto 8 / 16)
+// =========================================================
+ 
+function modificarSaborBox(btn, cambio) {
+ 
+    const fila = btn.closest(".sabor-row");
+    const contenedor = btn.closest(".sabor-selector-box");
+ 
+    if (!fila || !contenedor) return;
+ 
+    const qtyEl = fila.querySelector(".sabor-qty");
+    const totalEl = contenedor.querySelector(".sabor-total");
+    const max = parseInt(contenedor.dataset.max) || 0;
+ 
+    let actual = parseInt(qtyEl.innerText) || 0;
+ 
+    // Calcular el total actual sumando todas las filas
+    let filas = contenedor.querySelectorAll(".sabor-row .sabor-qty");
+    let totalActual = 0;
+    filas.forEach(el => totalActual += (parseInt(el.innerText) || 0));
+ 
+    // Si quiere sumar y ya se llegó al máximo, no dejar sumar más
+    if (cambio > 0 && totalActual >= max) {
+        return;
+    }
+ 
+    actual += cambio;
+ 
+    if (actual < 0) {
+        actual = 0;
+    }
+ 
+    qtyEl.innerText = actual;
+ 
+    // Recalcular total y mostrarlo
+    totalActual = 0;
+    filas.forEach(el => totalActual += (parseInt(el.innerText) || 0));
+ 
+    if (totalEl) {
+        totalEl.innerText = totalActual;
+    }
+}
+ 
+ 
+// =========================================================
+// AGREGAR BOX AL CARRITO CON EL DETALLE DE SABORES ELEGIDOS
+// =========================================================
+ 
+function agregarBoxConSabores(btn, nombreBase, precio, max) {
+ 
+    const card = btn.closest(".info-card");
+ 
+    if (!card) return;
+ 
+    const contenedor = card.querySelector(".sabor-selector-box");
+ 
+    if (!contenedor) return;
+ 
+    const filas = contenedor.querySelectorAll(".sabor-row");
+ 
+    let total = 0;
+    let detalle = [];
+ 
+    filas.forEach(fila => {
+ 
+        const cantidad = parseInt(fila.querySelector(".sabor-qty").innerText) || 0;
+        const sabor = fila.dataset.sabor;
+ 
+        total += cantidad;
+ 
+        if (cantidad > 0) {
+            detalle.push(cantidad + "x " + sabor);
+        }
+    });
+ 
+    // Validar que la suma sea exactamente la cantidad requerida
+    if (total !== max) {
+ 
+        const faltan = max - total;
+ 
+        if (faltan > 0) {
+            alert("Te faltan elegir " + faltan + " empanadita(s) para completar el " + nombreBase + ".");
+        } else {
+            alert("Te pasaste por " + Math.abs(faltan) + " empanadita(s). Ajustá la selección del " + nombreBase + ".");
+        }
+ 
+        return;
+    }
+ 
+    const nombreFinal = nombreBase + " (" + detalle.join(", ") + ")";
+ 
+    agregarAlCarrito(nombreFinal, precio, 1);
+ 
+    // Reiniciar selección de sabores para el próximo pedido
+    filas.forEach(fila => {
+        fila.querySelector(".sabor-qty").innerText = "0";
+    });
+ 
+    const totalEl = contenedor.querySelector(".sabor-total");
+    if (totalEl) {
+        totalEl.innerText = "0";
+    }
+}
+ 
 </script>

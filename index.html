@@ -80,7 +80,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN VIANDAS CORPORATIVAS -->
+   <!-- SECCIÓN VIANDAS CORPORATIVAS -->
     <section id="viandas-corporativas" class="section bg-darker">
         <div class="container">
             <div class="section-title">
@@ -113,15 +113,11 @@
                     <p>A partir de <strong>3 viandas diarias</strong>.</p>
                     <p>Ideal para pequeños equipos u oficinas.</p>
                     <h4 style="font-size: 1.5rem; color: var(--primary-color); margin: 15px 0;">$12.800 <small style="font-size: 0.6em;">/ unidad</small></h4>
-                    
-                    <div class="item-controls-inline">
-                        <div class="qty-selector">
-                            <button class="btn-qty-menu" onclick="modificarCantidadMenu(this, -1)">-</button>
-                            <span class="qty-val">1</span>
-                            <button class="btn-qty-menu" onclick="modificarCantidadMenu(this, 1)">+</button>
-                        </div>
-                        <button class="btn btn-primary" onclick="agregarDesdeMenu(this, 'Plan Vianda Corporativa (Básico)', 12800)">+ Agregar Pedido</button>
-                    </div>
+
+                    <!-- Antes: sumaba al carrito. Ahora: redirige a Google Form para cotizar -->
+                    <a href="COMPLETAR_LINK_GOOGLE_FORM" target="_blank" class="btn btn-primary" style="display:block; text-align:center; text-decoration:none;">
+                        Cotizar Plan Básico
+                    </a>
                 </div>
 
                 <div class="info-card" style="border: 2px solid var(--primary-color); background: rgba(255, 255, 255, 0.03);">
@@ -130,20 +126,15 @@
                     <p>A partir de <strong>5 viandas diarias</strong>.</p>
                     <p>Descuento especial por volumen corporativo.</p>
                     <h4 style="font-size: 1.5rem; color: var(--primary-color); margin: 15px 0;">$11.500 <small style="font-size: 0.6em;">/ unidad</small></h4>
-                    
-                    <div class="item-controls-inline">
-                        <div class="qty-selector">
-                            <button class="btn-qty-menu" onclick="modificarCantidadMenu(this, -1)">-</button>
-                            <span class="qty-val">1</span>
-                            <button class="btn-qty-menu" onclick="modificarCantidadMenu(this, 1)">+</button>
-                        </div>
-                        <button class="btn btn-primary" onclick="agregarDesdeMenu(this, 'Plan Vianda Corporativa (Completo)', 11500)">+ Agregar Pedido</button>
-                    </div>
+
+                    <!-- Antes: sumaba al carrito. Ahora: redirige a Google Form para cotizar -->
+                    <a href="COMPLETAR_LINK_GOOGLE_FORM" target="_blank" class="btn btn-primary" style="display:block; text-align:center; text-decoration:none;">
+                        Cotizar Plan Completo
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- SECCIÓN MENÚ -->
     <section id="menu" class="section">
         <div class="container">

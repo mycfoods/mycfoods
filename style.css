@@ -854,7 +854,7 @@ html {
 .nav-dropdown-content {
     display: none;
     position: absolute;
-    top: calc(100% + 12px);
+    top: 100%;
     right: 0;
     min-width: 180px;
     background: var(--bg-card);
@@ -864,6 +864,7 @@ html {
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     z-index: 9999;
 }
+
 
 .nav-dropdown-content a {
     display: block;

@@ -133,7 +133,191 @@
                     </a>
                 </div>
             </div>
+        <!-- ================================================================ -->
+<!-- PARTE 1: SECCIÓN BOX (reemplaza los dos primeros info-card del   -->
+<!-- bloque BOX que te pasé antes — el resto de "Armá y Agregá a tu   -->
+<!-- Box" con los packs x6 sigue igual, no se toca)                   -->
+<!-- ================================================================ -->
+ 
+<div class="info-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+ 
+    <!-- BOX PARA DOS -->
+    <div class="info-card" data-box-id="dos" style="border: 2px solid var(--primary-color); text-align: left;">
+        <i class="fa-solid fa-box-open"></i>
+        <h3>Box para Dos</h3>
+        <p>8 empanaditas a elección, 4 mini cheese burger, 4 sándwiches de mayo, jamón y queso, y 4 sándwiches de mayo pesto, queso y tomate.</p>
+        <h4 style="font-size: 1.5rem; color: var(--primary-color); margin: 15px 0;">$54.300</h4>
+ 
+        <div class="sabor-selector-box" data-max="8">
+            <p class="sabor-contador" style="font-weight: bold; margin-bottom: 10px;">
+                Sabores elegidos: <span class="sabor-total">0</span> / 8
+            </p>
+ 
+            <div class="sabor-row" data-sabor="Carne a Cuchillo" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Carne a Cuchillo</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Jamón y Queso" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Jamón y Queso</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Espinaca y Salsa Blanca" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Espinaca y Salsa Blanca</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Pollo" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Pollo</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Cebolla Caramelizada" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Cebolla Caramelizada</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Cuatro Quesos" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Cuatro Quesos</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Bondiola Braseada" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Bondiola Braseada</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Caprese" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Caprese</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
         </div>
+ 
+        <button class="btn btn-primary" style="width:100%; margin-top:15px;" onclick="agregarBoxConSabores(this, 'Box para Dos', 54300, 8)">+ Agregar Pedido</button>
+    </div>
+ 
+    <!-- BOX PARA CUATRO -->
+    <div class="info-card" data-box-id="cuatro" style="border: 2px solid var(--primary-color); background: rgba(255, 255, 255, 0.03); text-align: left;">
+        <i class="fa-solid fa-boxes-stacked"></i>
+        <h3>Box para Cuatro</h3>
+        <p>16 empanaditas a elección, 6 mini cheese burgers c/BBQ, 6 sándwiches de mayo, jamón y queso, 6 sándwiches de mayo pesto, queso y tomate, y 6 sándwiches de jamón crudo, rúcula y queso crema.</p>
+        <h4 style="font-size: 1.5rem; color: var(--primary-color); margin: 15px 0;">$110.000</h4>
+ 
+        <div class="sabor-selector-box" data-max="16">
+            <p class="sabor-contador" style="font-weight: bold; margin-bottom: 10px;">
+                Sabores elegidos: <span class="sabor-total">0</span> / 16
+            </p>
+ 
+            <div class="sabor-row" data-sabor="Carne a Cuchillo" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Carne a Cuchillo</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Jamón y Queso" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Jamón y Queso</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Espinaca y Salsa Blanca" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Espinaca y Salsa Blanca</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Pollo" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Pollo</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Cebolla Caramelizada" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Cebolla Caramelizada</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Cuatro Quesos" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Cuatro Quesos</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Bondiola Braseada" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Bondiola Braseada</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+ 
+            <div class="sabor-row" data-sabor="Caprese" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>Caprese</span>
+                <div class="qty-selector">
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, -1)">-</button>
+                    <span class="sabor-qty">0</span>
+                    <button class="btn-qty-menu" onclick="modificarSaborBox(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+ 
+        <button class="btn btn-primary" style="width:100%; margin-top:15px;" onclick="agregarBoxConSabores(this, 'Box para Cuatro', 110000, 16)">+ Agregar Pedido</button>
+    </div>
+ 
+</div>
     </section>
     <!-- SECCIÓN MENÚ -->
     <section id="menu" class="section">

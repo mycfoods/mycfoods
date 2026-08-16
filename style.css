@@ -587,7 +587,7 @@ details[open] .prod-name i {
             rgba(0, 0, 0, 0.70),
             rgba(0, 0, 0, 0.70)
         ),
-        url("imagenes/fondo/fondo.jpg");
+        url("fondo.jpg");
 
     background-size: cover;
     background-position: center;

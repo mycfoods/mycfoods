@@ -1185,5 +1185,5 @@ html {
             rgba(11,11,11,0.70) 0%,
             rgba(11,11,11,0.95) 100%
         ),
-        url('.jpg') center/cover no-repeat;
+        url('pizza.jpg') center/cover no-repeat;
 }

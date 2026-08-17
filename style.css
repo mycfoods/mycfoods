@@ -415,21 +415,34 @@ details[open] .prod-name i {
     gap: 10px;
 }
 
+/* =========================================================
+   BOTONES + / - GENERALES
+   Mismo estilo que los botones de gustos de los BOX
+========================================================= */
+
 .btn-qty {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    color: var(--text-white);
-    width: 28px;
-    height: 28px;
+    width: 25px;
+    height: 25px;
+    padding: 0;
     border-radius: 50%;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
     cursor: pointer;
-    font-weight: 700;
     transition: var(--transition);
 }
 
-.btn-qty:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+.btn-qty:hover:not(:disabled) {
+    background: var(--accent);
+    color: var(--bg-main);
+}
+
+.btn-qty:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
 }
 
 .cart-summary {

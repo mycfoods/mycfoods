@@ -1187,3 +1187,12 @@ html {
         ),
         url('pizza.jpg') center/cover no-repeat;
 }
+#parrilla {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(11,11,11,0.70) 0%,
+            rgba(11,11,11,0.95) 100%
+        ),
+        url('parrilla.jpg') center/cover no-repeat;
+}

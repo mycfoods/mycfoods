@@ -570,23 +570,19 @@
                     <div class="menu-accordion-grid">
 
 
-   <!-- =====================================================
+ <!-- =====================================================
      BOX PARA DOS
 ===================================================== -->
 
 <details class="accordion-item">
 
     <summary class="accordion-header">
-
         <span class="prod-name">
             <i class="fa-solid fa-chevron-right"></i>
             Box para Dos
         </span>
 
-        <span class="badge-click">
-            Ver detalle
-        </span>
-
+        <span class="badge-click">Ver detalle</span>
     </summary>
 
     <div class="accordion-body">
@@ -597,136 +593,114 @@
             4 sándwiches de mayo pesto, queso y tomate.
         </p>
 
-        <!-- SELECCIÓN DE GUSTOS -->
+        <!-- ELECCIÓN DE EMPANADITAS -->
 
-        <div class="box-sabores">
+        <div class="box-gustos">
 
-            <div class="box-sabores-title">
-                <strong>Elegí los gustos de tus empanaditas</strong>
-                <span class="box-total-seleccion">
-                    <span class="box-selected-count">0</span> / 8
+            <div class="box-gustos-header">
+                <strong>Elegí tus empanaditas</strong>
+
+                <span class="box-gustos-contador">
+                    <span class="gustos-total">0</span> / 8
                 </span>
             </div>
 
-            <div class="box-sabor-list">
+            <button
+                type="button"
+                class="btn-mostrar-gustos"
+                onclick="mostrarGustosBox(this)"
+            >
+                <i class="fa-solid fa-plus"></i>
+                Elegir gustos
+            </button>
 
-                <div class="box-sabor-item">
+            <div class="gustos-panel">
+
+                <div class="gusto-row">
                     <span>Carne cortada a cuchillo</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
 
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Carne cortada a cuchillo">0</span>
-
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Jamón y queso</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
 
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Jamón y queso">0</span>
-
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Espinaca y salsa blanca</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
 
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Espinaca y salsa blanca">0</span>
-
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Pollo</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
 
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Pollo">0</span>
-
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Cebolla caramelizada</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
 
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Cebolla caramelizada">0</span>
-
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Cuatro quesos</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
 
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Cuatro quesos">0</span>
-
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Bondiola braseada</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
 
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Bondiola braseada">0</span>
-
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Caprese</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
 
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Caprese">0</span>
-
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
             </div>
 
-        </div>
+            <div class="gustos-resumen"></div>
 
-        <!-- PRECIO Y AGREGAR -->
+        </div>
 
         <div class="item-action">
 
@@ -755,16 +729,12 @@
 <details class="accordion-item">
 
     <summary class="accordion-header">
-
         <span class="prod-name">
             <i class="fa-solid fa-chevron-right"></i>
             Box para Cuatro
         </span>
 
-        <span class="badge-click">
-            Ver detalle
-        </span>
-
+        <span class="badge-click">Ver detalle</span>
     </summary>
 
     <div class="accordion-body">
@@ -776,120 +746,106 @@
             6 sándwiches de jamón crudo, rúcula y queso crema.
         </p>
 
-        <!-- SELECCIÓN DE GUSTOS -->
+        <!-- ELECCIÓN DE EMPANADITAS -->
 
-        <div class="box-sabores">
+        <div class="box-gustos">
 
-            <div class="box-sabores-title">
-                <strong>Elegí los gustos de tus empanaditas</strong>
-                <span class="box-total-seleccion">
-                    <span class="box-selected-count">0</span> / 16
+            <div class="box-gustos-header">
+                <strong>Elegí tus empanaditas</strong>
+
+                <span class="box-gustos-contador">
+                    <span class="gustos-total">0</span> / 16
                 </span>
             </div>
 
-            <div class="box-sabor-list">
+            <button
+                type="button"
+                class="btn-mostrar-gustos"
+                onclick="mostrarGustosBox(this)"
+            >
+                <i class="fa-solid fa-plus"></i>
+                Elegir gustos
+            </button>
 
-                <div class="box-sabor-item">
+            <div class="gustos-panel">
+
+                <div class="gusto-row">
                     <span>Carne cortada a cuchillo</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Carne cortada a cuchillo">0</span>
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Jamón y queso</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Jamón y queso">0</span>
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Espinaca y salsa blanca</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Espinaca y salsa blanca">0</span>
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Pollo</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Pollo">0</span>
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Cebolla caramelizada</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Cebolla caramelizada">0</span>
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Cuatro quesos</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Cuatro quesos">0</span>
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Bondiola braseada</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Bondiola braseada">0</span>
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
-                <div class="box-sabor-item">
+                <div class="gusto-row">
                     <span>Caprese</span>
-                    <div class="qty-selector">
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, -1)">−</button>
-                        <span class="qty-val gusto-qty"
-                              data-flavor="Caprese">0</span>
-                        <button class="btn-qty-menu"
-                            onclick="modificarGustoBox(this, 1)">+</button>
+                    <div class="gusto-control">
+                        <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                        <span class="gusto-cantidad">0</span>
+                        <button type="button" onclick="cambiarGusto(this,1)">+</button>
                     </div>
                 </div>
 
             </div>
 
-        </div>
+            <div class="gustos-resumen"></div>
 
-        <!-- PRECIO Y AGREGAR -->
+        </div>
 
         <div class="item-action">
 
@@ -907,6 +863,8 @@
         </div>
 
     </div>
+
+
 
 </details>
 

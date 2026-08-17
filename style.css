@@ -983,3 +983,139 @@ html {
     }
 
 }
+/* =========================================================
+   SELECTOR DE GUSTOS DE BOX
+========================================================= */
+
+.box-gustos {
+    margin: 20px 0;
+    padding: 15px;
+    background: #0f0f0f;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.box-gustos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    color: var(--text-white);
+    font-size: 0.9rem;
+}
+
+.box-gustos-contador {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+.btn-mostrar-gustos {
+    width: 100%;
+    padding: 10px 15px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-white);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-mostrar-gustos:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.gustos-panel {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.box-gustos.abierto .gustos-panel {
+    display: grid;
+}
+
+.box-gustos.abierto .btn-mostrar-gustos {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.gusto-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    min-height: 48px;
+}
+
+.gusto-row > span {
+    color: var(--text-gray);
+    font-size: 0.78rem;
+    line-height: 1.2;
+}
+
+.gusto-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.gusto-control button {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.gusto-control button:hover:not(:disabled) {
+    background: var(--accent);
+    color: var(--bg-main);
+}
+
+.gusto-control button:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+.gusto-cantidad {
+    min-width: 18px;
+    text-align: center;
+    color: var(--text-white);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.gustos-resumen {
+    margin-top: 10px;
+    color: var(--text-gray);
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 550px) {
+
+    .gustos-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .gusto-row {
+        min-height: 44px;
+    }
+
+}

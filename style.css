@@ -595,11 +595,14 @@ details[open] .prod-name i {
     }
 
     /* ABIERTO AL TOCAR LOS 3 PUNTOS */
-    .menu-toggle:checked ~ .nav-links {
+     .menu-toggle:checked ~ .nav-links {
         max-height: 350px;
         padding: 20px 0;
         overflow-y: auto;
     }
+
+} /* CIERRE DEL PRIMER @media */
+
 
 
 #menu {

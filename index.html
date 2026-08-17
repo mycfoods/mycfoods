@@ -570,159 +570,345 @@
                     <div class="menu-accordion-grid">
 
 
-                        <!-- BOX PARA DOS -->
+   <!-- =====================================================
+     BOX PARA DOS
+===================================================== -->
 
-                        <details class="accordion-item">
+<details class="accordion-item">
 
-                            <summary class="accordion-header">
+    <summary class="accordion-header">
 
-                                <span class="prod-name">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                    Box para Dos
-                                </span>
+        <span class="prod-name">
+            <i class="fa-solid fa-chevron-right"></i>
+            Box para Dos
+        </span>
 
-                                <span class="badge-click">
-                                    Ver detalle
-                                </span>
+        <span class="badge-click">
+            Ver detalle
+        </span>
 
-                            </summary>
+    </summary>
 
-                            <div class="accordion-body">
+    <div class="accordion-body">
 
-                                <p class="desc">
-                                    8 empanaditas a elección, 4 mini cheese burger,
-                                    4 sándwiches de mayo, jamón y queso y
-                                    4 sándwiches de mayo pesto, queso y tomate.
-                                </p>
+        <p class="desc">
+            8 empanaditas a elección, 4 mini cheese burger,
+            4 sándwiches de mayo, jamón y queso y
+            4 sándwiches de mayo pesto, queso y tomate.
+        </p>
 
-                                <div class="item-action">
+        <!-- SELECCIÓN DE GUSTOS -->
 
-                                    <span class="price">
-                                        $54.300
-                                    </span>
+        <div class="box-sabores">
 
-                                    <div class="item-controls-inline">
+            <div class="box-sabores-title">
+                <strong>Elegí los gustos de tus empanaditas</strong>
+                <span class="box-total-seleccion">
+                    <span class="box-selected-count">0</span> / 8
+                </span>
+            </div>
 
-                                        <div class="qty-selector">
+            <div class="box-sabor-list">
 
-                                            <button
-                                                class="btn-qty-menu"
-                                                onclick="modificarCantidadBox(this, -1)"
-                                            >
-                                                -
-                                            </button>
+                <div class="box-sabor-item">
+                    <span>Carne cortada a cuchillo</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
 
-                                            <span
-                                                class="qty-val"
-                                                data-step="1"
-                                                data-min="1"
-                                            >
-                                                1
-                                            </span>
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Carne cortada a cuchillo">0</span>
 
-                                            <button
-                                                class="btn-qty-menu"
-                                                onclick="modificarCantidadBox(this, 1)"
-                                            >
-                                                +
-                                            </button>
-
-                                        </div>
-
-                                        <button
-                                            class="btn-add"
-                                            onclick="agregarPackBox(this, 'Box para Dos', 54300)"
-                                        >
-                                            + Agregar
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </details>
-
-
-                        <!-- BOX PARA CUATRO -->
-
-                        <details class="accordion-item">
-
-                            <summary class="accordion-header">
-
-                                <span class="prod-name">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                    Box para Cuatro
-                                </span>
-
-                                <span class="badge-click">
-                                    Ver detalle
-                                </span>
-
-                            </summary>
-
-                            <div class="accordion-body">
-
-                                <p class="desc">
-                                    16 empanaditas a elección, 6 mini cheese burgers,
-                                    6 sándwiches de mayo, jamón y queso,
-                                    6 sándwiches de mayo pesto, queso y tomate y
-                                    6 sándwiches de jamón crudo, rúcula y queso crema.
-                                </p>
-
-                                <div class="item-action">
-
-                                    <span class="price">
-                                        $110.000
-                                    </span>
-
-                                    <div class="item-controls-inline">
-
-                                        <div class="qty-selector">
-
-                                            <button
-                                                class="btn-qty-menu"
-                                                onclick="modificarCantidadBox(this, -1)"
-                                            >
-                                                -
-                                            </button>
-
-                                            <span
-                                                class="qty-val"
-                                                data-step="1"
-                                                data-min="1"
-                                            >
-                                                1
-                                            </span>
-
-                                            <button
-                                                class="btn-qty-menu"
-                                                onclick="modificarCantidadBox(this, 1)"
-                                            >
-                                                +
-                                            </button>
-
-                                        </div>
-
-                                        <button
-                                            class="btn-add"
-                                            onclick="agregarPackBox(this, 'Box para Cuatro', 110000)"
-                                        >
-                                            + Agregar
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </details>
-
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
                     </div>
-
                 </div>
+
+                <div class="box-sabor-item">
+                    <span>Jamón y queso</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Jamón y queso">0</span>
+
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Espinaca y salsa blanca</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Espinaca y salsa blanca">0</span>
+
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Pollo</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Pollo">0</span>
+
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Cebolla caramelizada</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Cebolla caramelizada">0</span>
+
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Cuatro quesos</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Cuatro quesos">0</span>
+
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Bondiola braseada</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Bondiola braseada">0</span>
+
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Caprese</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Caprese">0</span>
+
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRECIO Y AGREGAR -->
+
+        <div class="item-action">
+
+            <span class="price">
+                $54.300
+            </span>
+
+            <button
+                class="btn-add"
+                onclick="agregarBoxConGustos(this, 'Box para Dos', 54300, 8)"
+            >
+                + Agregar
+            </button>
+
+        </div>
+
+    </div>
+
+</details>
+
+
+<!-- =====================================================
+     BOX PARA CUATRO
+===================================================== -->
+
+<details class="accordion-item">
+
+    <summary class="accordion-header">
+
+        <span class="prod-name">
+            <i class="fa-solid fa-chevron-right"></i>
+            Box para Cuatro
+        </span>
+
+        <span class="badge-click">
+            Ver detalle
+        </span>
+
+    </summary>
+
+    <div class="accordion-body">
+
+        <p class="desc">
+            16 empanaditas a elección, 6 mini cheese burgers,
+            6 sándwiches de mayo, jamón y queso,
+            6 sándwiches de mayo pesto, queso y tomate y
+            6 sándwiches de jamón crudo, rúcula y queso crema.
+        </p>
+
+        <!-- SELECCIÓN DE GUSTOS -->
+
+        <div class="box-sabores">
+
+            <div class="box-sabores-title">
+                <strong>Elegí los gustos de tus empanaditas</strong>
+                <span class="box-total-seleccion">
+                    <span class="box-selected-count">0</span> / 16
+                </span>
+            </div>
+
+            <div class="box-sabor-list">
+
+                <div class="box-sabor-item">
+                    <span>Carne cortada a cuchillo</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Carne cortada a cuchillo">0</span>
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Jamón y queso</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Jamón y queso">0</span>
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Espinaca y salsa blanca</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Espinaca y salsa blanca">0</span>
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Pollo</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Pollo">0</span>
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Cebolla caramelizada</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Cebolla caramelizada">0</span>
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Cuatro quesos</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Cuatro quesos">0</span>
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Bondiola braseada</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Bondiola braseada">0</span>
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="box-sabor-item">
+                    <span>Caprese</span>
+                    <div class="qty-selector">
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, -1)">−</button>
+                        <span class="qty-val gusto-qty"
+                              data-flavor="Caprese">0</span>
+                        <button class="btn-qty-menu"
+                            onclick="modificarGustoBox(this, 1)">+</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRECIO Y AGREGAR -->
+
+        <div class="item-action">
+
+            <span class="price">
+                $110.000
+            </span>
+
+            <button
+                class="btn-add"
+                onclick="agregarBoxConGustos(this, 'Box para Cuatro', 110000, 16)"
+            >
+                + Agregar
+            </button>
+
+        </div>
+
+    </div>
+
+</details>
 
 
                 <!-- =================================================

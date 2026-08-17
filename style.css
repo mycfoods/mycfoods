@@ -625,7 +625,7 @@ details[open] .prod-name i {
             rgba(11,11,11,0.70) 0%,
             rgba(11,11,11,0.95) 100%
         ),
-        url('fondo.jpg') center/cover no-repeat;
+        url('plato.jpg') center/cover no-repeat;
 }
 /* BOTÓN VOLVER ARRIBA */
 
@@ -1177,4 +1177,13 @@ html {
             rgba(11,11,11,0.95) 100%
         ),
         url('fondo.jpg') center/cover no-repeat;
+}
+#pizza-party {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(11,11,11,0.70) 0%,
+            rgba(11,11,11,0.95) 100%
+        ),
+        url('.jpg') center/cover no-repeat;
 }

@@ -3453,5 +3453,213 @@ if (btnVolverArriba) {
     });
 
 }    
+/* =========================================================
+   SELECTOR DE GUSTOS PARA BOX
+========================================================= */
 
+function mostrarGustosBox(boton) {
+
+    const box = boton.closest('.box-gustos');
+
+    box.classList.toggle('abierto');
+
+    if (box.classList.contains('abierto')) {
+        boton.innerHTML =
+            '<i class="fa-solid fa-minus"></i> Ocultar gustos';
+    } else {
+        boton.innerHTML =
+            '<i class="fa-solid fa-plus"></i> Elegir gustos';
+    }
+}
+
+
+function cambiarGusto(boton, cambio) {
+
+    const box = boton.closest('.box-gustos');
+
+    const cantidadElemento =
+        boton.parentElement.querySelector('.gusto-cantidad');
+
+    let cantidad =
+        parseInt(cantidadElemento.textContent) || 0;
+
+    const totalElemento =
+        box.querySelector('.gustos-total');
+
+    const limite =
+        parseInt(
+            box.querySelector('.box-gustos-contador')
+                .textContent.split('/')[1]
+        );
+
+    let totalActual = 0;
+
+    box.querySelectorAll('.gusto-cantidad').forEach(elemento => {
+        totalActual += parseInt(elemento.textContent) || 0;
+    });
+
+    if (cambio > 0 && totalActual >= limite) {
+        return;
+    }
+
+    cantidad += cambio;
+
+    if (cantidad < 0) {
+        cantidad = 0;
+    }
+
+    cantidadElemento.textContent = cantidad;
+
+    actualizarGustosBox(box);
+}
+
+
+function actualizarGustosBox(box) {
+
+    let total = 0;
+
+    const seleccionados = [];
+
+    box.querySelectorAll('.gusto-row').forEach(row => {
+
+        const nombre =
+            row.querySelector('span').textContent.trim();
+
+        const cantidad =
+            parseInt(
+                row.querySelector('.gusto-cantidad').textContent
+            ) || 0;
+
+        total += cantidad;
+
+        if (cantidad > 0) {
+            seleccionados.push(
+                `${nombre} ×${cantidad}`
+            );
+        }
+    });
+
+    box.querySelector('.gustos-total').textContent = total;
+
+    const limite =
+        parseInt(
+            box.querySelector('.box-gustos-contador')
+                .textContent.split('/')[1]
+        );
+
+    /* Bloquear los + cuando se alcanza el máximo */
+
+    box.querySelectorAll('.gusto-row').forEach(row => {
+
+        const botones =
+            row.querySelectorAll('.gusto-control button');
+
+        const cantidad =
+            parseInt(
+                row.querySelector('.gusto-cantidad').textContent
+            ) || 0;
+
+        botones[0].disabled = cantidad === 0;
+        botones[1].disabled = total >= limite;
+
+    });
+
+    /* Resumen */
+
+    const resumen =
+        box.querySelector('.gustos-resumen');
+
+    if (seleccionados.length > 0) {
+
+        resumen.textContent =
+            seleccionados.join(' · ');
+
+    } else {
+
+        resumen.textContent = '';
+
+    }
+}
+
+
+/* =========================================================
+   AGREGAR BOX CON LOS GUSTOS
+========================================================= */
+
+function agregarBoxConGustos(boton, nombre, precio, limite) {
+
+    const box =
+        boton.closest('.accordion-body')
+            .querySelector('.box-gustos');
+
+    let total = 0;
+    const gustos = [];
+
+    box.querySelectorAll('.gusto-row').forEach(row => {
+
+        const nombreGusto =
+            row.querySelector('span').textContent.trim();
+
+        const cantidad =
+            parseInt(
+                row.querySelector('.gusto-cantidad').textContent
+            ) || 0;
+
+        total += cantidad;
+
+        if (cantidad > 0) {
+            gustos.push(
+                `${nombreGusto} ×${cantidad}`
+            );
+        }
+
+    });
+
+    if (total !== limite) {
+
+        alert(
+            `Debés seleccionar exactamente ${limite} empanaditas.\n\n` +
+            `Seleccionadas: ${total} de ${limite}`
+        );
+
+        return;
+    }
+
+    const detalle =
+        gustos.join(', ');
+
+    /*
+       Acá utilizamos la función existente del carrito
+       si está disponible.
+    */
+
+    if (typeof agregarAlCarrito === 'function') {
+
+        agregarAlCarrito(
+            nombre,
+            precio,
+            1,
+            detalle
+        );
+
+    } else if (typeof agregarProducto === 'function') {
+
+        agregarProducto(
+            nombre,
+            precio,
+            1,
+            detalle
+        );
+
+    } else {
+
+        console.log({
+            producto: nombre,
+            precio: precio,
+            cantidad: 1,
+            gustos: detalle
+        });
+
+    }
+}
 </script>

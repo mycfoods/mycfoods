@@ -576,35 +576,45 @@ details[open] .prod-name i {
         cursor: pointer;
     }
 
-.nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(11, 11, 11, 0.92);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 0;
-    
-    /* OCULTO POR DEFECTO */
-    max-height: 0;
-    overflow: hidden;
-    
-    transition: max-height 0.3s ease-out;
-    border-bottom: none;
-}
+@media (max-width: 768px) {
 
-.nav-links > a,
-.nav-links > .nav-dropdown {
-    width: 100%;
-    text-align: center;
-}
+    .hero h1 {
+        font-size: 2.8rem;
+    }
 
-/* SOLO SE MUESTRA AL TOCAR LOS 3 PUNTOS */
-.menu-toggle:checked ~ .nav-links {
-    max-height: 350px;
-    overflow-y: auto;
-}
+    .menu-icon {
+        display: block;
+        color: var(--text-white);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(11, 11, 11, 0.92);
+        flex-direction: column;
+        align-items: center;
+
+        /* CERRADO */
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.3s ease-out;
+        border-bottom: none;
+    }
+
+    /* ABIERTO AL TOCAR LOS 3 PUNTOS */
+    .menu-toggle:checked ~ .nav-links {
+        max-height: 350px;
+        padding: 20px 0;
+        overflow-y: auto;
+    }
+
+
 #menu {
     background:
         linear-gradient(

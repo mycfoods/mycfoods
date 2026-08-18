@@ -2683,7 +2683,48 @@
 <script>
 
 let carrito = [];
+// =========================================================
+// BOTÓN FLOTANTE DEL CARRITO
+// =========================================================
 
+let tiempoOcultarCarrito;
+
+
+// Actualizar cantidad de productos del carrito
+function actualizarBotonCarrito() {
+
+    const contador =
+        document.getElementById("floating-cart-count");
+
+    if (!contador) return;
+
+    // Cuenta productos distintos, NO unidades
+    contador.innerText = carrito.length;
+}
+
+
+// Mostrar carrito mientras se desplaza la página
+function mostrarBotonCarrito() {
+
+    const boton =
+        document.getElementById("floating-cart-btn");
+
+    if (!boton) return;
+
+    boton.classList.add("visible");
+
+    clearTimeout(tiempoOcultarCarrito);
+
+    tiempoOcultarCarrito = setTimeout(() => {
+
+        boton.classList.remove("visible");
+
+    }, 2000);
+}
+
+
+// Detectar desplazamiento
+window.addEventListener("scroll", mostrarBotonCarrito);
 // =========================================================
 // CARGAR MENÚ DEL DÍA DESDE GOOGLE SHEETS
 // =========================================================
@@ -2857,6 +2898,7 @@ function agregarAlCarrito(nombre, precio, cantidad = 1) {
     }
 
     actualizarCarritoUI();
+actualizarBotonCarrito();
 }
 
 
@@ -2887,6 +2929,7 @@ function vaciarCarrito() {
     carrito = [];
 
     actualizarCarritoUI();
+    actualizarBotonCarrito();
 }
 
 

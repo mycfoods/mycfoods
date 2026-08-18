@@ -3677,5 +3677,23 @@ function agregarBoxConGustos(boton, nombre, precio, limite) {
         });
 
     }
+}// =========================================================
+// IR AL CARRITO DESDE EL BOTÓN FLOTANTE
+// =========================================================
+
+function irAlCarrito() {
+
+    const carritoSeccion =
+        document.getElementById("carrito");
+
+    if (carritoSeccion) {
+
+        carritoSeccion.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+
 }
 </script>

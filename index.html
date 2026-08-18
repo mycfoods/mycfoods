@@ -2725,6 +2725,17 @@ function mostrarBotonCarrito() {
 
 // Detectar desplazamiento
 window.addEventListener("scroll", mostrarBotonCarrito);
+    // Ocultar el carrito flotante al cargar la página
+document.addEventListener("DOMContentLoaded", function() {
+
+    const boton =
+        document.getElementById("floating-cart-btn");
+
+    if (boton) {
+        boton.classList.remove("visible");
+    }
+
+});
 // =========================================================
 // CARGAR MENÚ DEL DÍA DESDE GOOGLE SHEETS
 // =========================================================

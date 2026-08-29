@@ -1382,3 +1382,34 @@ html {
 .event-content.open {
     display: block;
 }
+```css
+/* =========================================================
+   EVENTOS GASTRONÓMICOS - PESTAÑAS
+   ========================================================= */
+
+/* Ocultar todos los contenidos inicialmente */
+.event-panel {
+    display: none;
+}
+
+/* Mostrar la categoría seleccionada */
+
+#tab-viandas:checked ~ .event-panel.cat-event-viandas,
+#tab-parrilla:checked ~ .event-panel.cat-event-parrilla,
+#tab-pizza-party:checked ~ .event-panel.cat-event-pizza,
+#tab-pernil:checked ~ .event-panel.cat-event-pernil {
+    display: block;
+}
+
+
+/* Botón activo */
+
+#tab-viandas:checked ~ .tabs-header label[for="tab-viandas"],
+#tab-parrilla:checked ~ .tabs-header label[for="tab-parrilla"],
+#tab-pizza-party:checked ~ .tabs-header label[for="tab-pizza-party"],
+#tab-pernil:checked ~ .tabs-header label[for="tab-pernil"] {
+    background: var(--accent);
+    color: var(--bg-main);
+    border-color: var(--accent);
+}
+```

@@ -939,7 +939,11 @@
              <!-- =========================================================
      SECCIÓN PARRILLA ENTRE PANES
      ========================================================= -->
+<button class="event-toggle" onclick="toggleEvent('parrilla')">
+    Parrilla Entre Panes <span>+</span>
+</button>
 
+<div id="parrilla-content" class="event-content">
 <section id="parrilla" class="section bg-darker">
     <div class="container">
 
@@ -1016,7 +1020,7 @@
 
     </div>
 </section>
-
+</div>
 
 <!-- =========================================================
      SECCIÓN PIZZA PARTY
@@ -3751,5 +3755,42 @@ function irAlCarrito() {
 
     }
 
+}// =========================================================
+// ACORDEÓN DE EVENTOS
+// =========================================================
+
+function toggleEvent(id) {
+
+    const content = document.getElementById(id + "-content");
+    const button = document.querySelector(
+        `[onclick="toggleEvent('${id}')"]`
+    );
+
+    if (!content || !button) return;
+
+    const estabaAbierto = content.classList.contains("open");
+
+    // Cerrar todos
+    document.querySelectorAll(".event-content").forEach(function(elemento) {
+        elemento.classList.remove("open");
+    });
+
+    document.querySelectorAll(".event-toggle span").forEach(function(span) {
+        span.textContent = "+";
+    });
+
+    // Abrir el seleccionado
+    if (!estabaAbierto) {
+
+        content.classList.add("open");
+        button.querySelector("span").textContent = "−";
+
+        setTimeout(function() {
+            button.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }, 50);
+    }
 }
 </script>

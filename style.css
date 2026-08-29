@@ -36,16 +36,20 @@ body {
     padding: 0 20px;
 }
 
-/* NAVEGACIÓN CORREGIDA (Ya no es un banner fijo negro) */
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
 .navbar {
-    position: absolute; /* Cambiado de fixed a absolute para que no te siga al scrollear */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    background: transparent; /* Quitamos el fondo negro sólido */
+    background: transparent;
     z-index: 1000;
     padding: 25px 0;
-    border-bottom: none; /* Quitamos la línea divisoria si querés un estilo más limpio */
+    border-bottom: none;
 }
 
 .logo-container {
@@ -61,7 +65,8 @@ body {
     text-decoration: none;
 }
 
-.logo i, .logo span {
+.logo i,
+.logo span {
     color: var(--accent);
 }
 
@@ -91,16 +96,28 @@ body {
     font-weight: 700 !important;
 }
 
-.menu-toggle, .menu-icon {
+.menu-toggle,
+.menu-icon {
     display: none;
 }
 
-/* HERO */
+
+/* =========================================================
+   HERO
+========================================================= */
+
 .hero {
     height: 100vh;
     min-height: 600px;
-    background: linear-gradient(180deg, rgba(11,11,11,0.7) 0%, rgba(11,11,11,1) 100%), 
-                url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(11,11,11,0.7) 0%,
+            rgba(11,11,11,1) 100%
+        ),
+        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=80')
+        center/cover no-repeat;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,7 +179,11 @@ body {
     color: var(--text-white);
 }
 
-/* SECCIONES Y TITULOS */
+
+/* =========================================================
+   SECCIONES Y TÍTULOS
+========================================================= */
+
 .section {
     padding: 90px 0;
 }
@@ -206,7 +227,11 @@ body {
     border-left: 4px solid var(--accent);
 }
 
-/* MENÚ INTERACTIVO DESPLEGABLE */
+
+/* =========================================================
+   MENÚ INTERACTIVO
+========================================================= */
+
 .menu-tabs-container input[type="radio"] {
     display: none;
 }
@@ -236,7 +261,9 @@ body {
     color: var(--accent);
 }
 
-/* Estados Activos de Botones (Todas las 8 Categorías) */
+
+/* CATEGORÍAS DEL MENÚ */
+
 #tab-wraps:checked ~ .tabs-header label[for="tab-wraps"],
 #tab-menu-dia:checked ~ .tabs-header label[for="tab-menu-dia"],
 #tab-minutas:checked ~ .tabs-header label[for="tab-minutas"],
@@ -249,6 +276,11 @@ body {
     color: var(--bg-main);
     border-color: var(--accent);
 }
+
+
+/* =========================================================
+   ACORDEÓN DEL MENÚ
+========================================================= */
 
 .menu-accordion-grid {
     display: flex;
@@ -303,7 +335,7 @@ details[open] .prod-name i {
 }
 
 .accordion-body {
-    padding: 15px 20px 20px 20px;
+    padding: 15px 20px 20px;
     border-top: 1px solid var(--border-color);
     background: #0f0f0f;
 }
@@ -341,7 +373,25 @@ details[open] .prod-name i {
     background: var(--accent-hover);
 }
 
-/* Contadores por tarjeta (Si usás suma/resta directa) */
+
+/* FILTROS DEL MENÚ */
+
+#tab-wraps:checked ~ .menu-accordion-grid .accordion-item:not(.cat-wraps),
+#tab-menu-dia:checked ~ .menu-accordion-grid .accordion-item:not(.cat-menu-dia),
+#tab-minutas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-minutas),
+#tab-adicionales:checked ~ .menu-accordion-grid .accordion-item:not(.cat-adicionales),
+#tab-ensaladas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-ensaladas),
+#tab-empanadas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-empanadas),
+#tab-tartas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-tartas),
+#tab-sandwichs:checked ~ .menu-accordion-grid .accordion-item:not(.cat-sandwichs) {
+    display: none;
+}
+
+
+/* =========================================================
+   CONTADORES
+========================================================= */
+
 .card-counter {
     display: flex;
     align-items: center;
@@ -358,19 +408,43 @@ details[open] .prod-name i {
     color: #fff;
 }
 
-/* Lógica de Filtros CSS - Muestra solo la categoría seleccionada */
-#tab-wraps:checked ~ .menu-accordion-grid .accordion-item:not(.cat-wraps),
-#tab-menu-dia:checked ~ .menu-accordion-grid .accordion-item:not(.cat-menu-dia),
-#tab-minutas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-minutas),
-#tab-adicionales:checked ~ .menu-accordion-grid .accordion-item:not(.cat-adicionales),
-#tab-ensaladas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-ensaladas),
-#tab-empanadas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-empanadas),
-#tab-tartas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-tartas),
-#tab-sandwichs:checked ~ .menu-accordion-grid .accordion-item:not(.cat-sandwichs) {
-    display: none;
+
+/* BOTONES + / - */
+
+.btn-qty,
+.btn-qty-menu {
+    width: 25px !important;
+    height: 25px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    border: 1px solid var(--accent) !important;
+    background: transparent !important;
+    color: var(--accent) !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
-/* CARRITO */
+.btn-qty:hover,
+.btn-qty-menu:hover {
+    background: var(--accent) !important;
+    color: var(--bg-main) !important;
+    border-color: var(--accent) !important;
+}
+
+.btn-qty:disabled,
+.btn-qty-menu:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   CARRITO
+========================================================= */
+
 .cart-box {
     max-width: 800px;
     margin: 0 auto;
@@ -415,36 +489,6 @@ details[open] .prod-name i {
     gap: 10px;
 }
 
-/* =========================================================
-   BOTONES + / - GENERALES
-   Mismo estilo que los botones de gustos de los BOX
-========================================================= */
-
-.btn-qty {
-    width: 25px;
-    height: 25px;
-    padding: 0;
-    border-radius: 50%;
-    border: 1px solid var(--accent);
-    background: transparent;
-    color: var(--accent);
-    font-size: 15px;
-    font-weight: 800;
-    line-height: 1;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn-qty:hover:not(:disabled) {
-    background: var(--accent);
-    color: var(--bg-main);
-}
-
-.btn-qty:disabled {
-    opacity: 0.25;
-    cursor: not-allowed;
-}
-
 .cart-summary {
     border-top: 2px solid var(--border-color);
     padding-top: 20px;
@@ -486,7 +530,6 @@ details[open] .prod-name i {
     background: var(--whatsapp-dark);
 }
 
-/* BOTÓN DE VACIAR CARRITO */
 .btn-clear-cart {
     background: transparent;
     color: #ff5252;
@@ -504,14 +547,20 @@ details[open] .prod-name i {
     color: #fff;
 }
 
-/* CATERING & INFO */
-.catering-grid, .info-grid {
+
+/* =========================================================
+   CATERING E INFORMACIÓN
+========================================================= */
+
+.catering-grid,
+.info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
 
-.catering-box, .info-card {
+.catering-box,
+.info-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     padding: 35px 25px;
@@ -519,104 +568,143 @@ details[open] .prod-name i {
     text-align: center;
 }
 
-.catering-box i, .info-card i {
+.catering-box i,
+.info-card i {
     font-size: 2.5rem;
     color: var(--accent);
     margin-bottom: 15px;
 }
 
-/* FOOTER */
-.footer {
-    background: #050505;
-    padding: 70px 0 30px 0;
+
+/* =========================================================
+   ACORDEÓN DE EVENTOS
+========================================================= */
+
+.event-toggle {
+    width: 90%;
+    max-width: 700px;
+    margin: 25px auto 15px;
+    padding: 20px 25px;
+
+    background: var(--dark-color);
+    color: white;
+
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+
+    cursor: pointer;
     text-align: center;
-    border-top: 1px solid var(--border-color);
-}
 
-.motivational-phrase {
-    font-style: italic;
-    font-size: 1.25rem;
-    max-width: 750px;
-    margin: 0 auto 35px auto;
-    color: var(--text-white);
-}
-
-.btn-whatsapp-footer {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--whatsapp);
-    color: #ffffff;
-    padding: 14px 28px;
-    border-radius: 30px;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.social-links { margin-top: 25px; }
-.social-links a { color: var(--accent); text-decoration: none; font-weight: 700; }
-.footer-divider { border: none; border-top: 1px solid var(--border-color); margin: 35px 0 20px 0; }
-.footer-bottom { font-size: 0.85rem; color: var(--text-gray); }
-
-.whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: var(--whatsapp);
-    color: #ffffff;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 23px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    z-index: 999;
-    text-decoration: none;
+
+    transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
+.event-toggle:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 176, 32, 0.08);
+}
 
-    .hero h1 {
-        font-size: 2.8rem;
-    }
+.event-toggle .event-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
 
-    .menu-icon {
-        display: block;
-        color: var(--text-white);
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
+.event-toggle .event-description {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
 
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(11, 11, 11, 0.92);
-        flex-direction: column;
-        align-items: center;
+.event-toggle .event-action {
+    margin-top: 12px;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
 
-        /* CERRADO */
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
+.event-content {
+    display: none;
+}
 
-        transition: max-height 0.3s ease-out;
-        border-bottom: none;
-    }
-
-    /* ABIERTO AL TOCAR LOS 3 PUNTOS */
-     .menu-toggle:checked ~ .nav-links {
-        max-height: 350px;
-        padding: 20px 0;
-        overflow-y: auto;
-    }
-
-} /* CIERRE DEL PRIMER @media */
+.event-content.open {
+    display: block;
+}
 
 
+/* =========================================================
+   EVENTOS GASTRONÓMICOS - PESTAÑAS
+   SOLO: PARRILLA / PIZZA PARTY / PERNIL
+========================================================= */
+
+.eventos-tabs-container input[type="radio"] {
+    display: none;
+}
+
+
+/* BOTONES DE CATEGORÍAS */
+
+.eventos-tabs-container .tabs-header {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.eventos-tabs-container .tab-btn {
+    padding: 10px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    transition: var(--transition);
+}
+
+.eventos-tabs-container .tab-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+
+/* CONTENIDO */
+
+.eventos-tabs-container .event-panel {
+    display: none;
+}
+
+
+/* MOSTRAR CATEGORÍA SELECCIONADA */
+
+#tab-parrilla:checked ~ .event-panel.cat-event-parrilla,
+#tab-pizza-party:checked ~ .event-panel.cat-event-pizza,
+#tab-pernil:checked ~ .event-panel.cat-event-pernil {
+    display: block;
+}
+
+
+/* BOTÓN ACTIVO */
+
+#tab-parrilla:checked ~ .tabs-header label[for="tab-parrilla"],
+#tab-pizza-party:checked ~ .tabs-header label[for="tab-pizza-party"],
+#tab-pernil:checked ~ .tabs-header label[for="tab-pernil"] {
+    background: var(--accent);
+    color: var(--bg-main);
+    border-color: var(--accent);
+}
+
+
+/* =========================================================
+   FONDOS DE SECCIONES
+========================================================= */
 
 #menu {
     background:
@@ -627,464 +715,38 @@ details[open] .prod-name i {
         ),
         url('plato.jpg') center/cover no-repeat;
 }
-/* BOTÓN VOLVER ARRIBA */
 
-#btn-volver-arriba {
-    position: fixed;
-    bottom: 90px;
-    right: 25px;
-    width: 45px;
-    height: 45px;
-    background: var(--accent);
-    color: var(--bg-main);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1.1rem;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: var(--transition);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+#box {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(11,11,11,0.70) 0%,
+            rgba(11,11,11,0.95) 100%
+        ),
+        url('fondo.jpg') center/cover no-repeat;
 }
 
-#btn-volver-arriba.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+#pizza-party {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(11,11,11,0.70) 0%,
+            rgba(11,11,11,0.95) 100%
+        ),
+        url('pizza.jpg') center/cover no-repeat;
 }
 
-#btn-volver-arriba:hover {
-    background: var(--accent-hover);
-    transform: translateY(-3px);
-}
-/* =========================================
-   BOTÓN FLOTANTE DEL CARRITO
-   ========================================= */
-
-/* =========================================
-   BOTÓN FLOTANTE DEL CARRITO
-   ========================================= */
-
-#floating-cart-btn {
-    position: fixed;
-    bottom: 145px;
-    right: 25px;
-
-    width: 45px;
-    height: 45px;
-
-    background: var(--accent);
-    color: var(--bg-main);
-
-    border: none;
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 1.1rem;
-    cursor: pointer;
-
-    z-index: 9999;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transform: translateY(10px);
-
-    transition: opacity 0.3s ease,
-                transform 0.3s ease,
-                visibility 0.3s ease;
-}
-
-#floating-cart-btn.visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-#floating-cart-count {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-
-    min-width: 20px;
-    height: 20px;
-
-    padding: 0 5px;
-
-    background: #ff3b30;
-    color: #ffffff;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 11px;
-    font-weight: bold;
-}
-#floating-cart-count {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    min-width: 20px;
-    height: 20px;
-    padding: 0 5px;
-    background: #ff3b30;
-    color: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-/* =========================================================
-   FOOTER / BANNER FINAL MYCFOODS
-   ========================================================= */
-
-.footer-mycfoods {
-    background: #080808;
-    border-top: 1px solid var(--border-color);
-    padding: 60px 20px 0;
-    margin-top: 60px;
-}
-
-.footer-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 45px;
-    align-items: center;
+#parrilla {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(11,11,11,0.70) 0%,
+            rgba(11,11,11,0.95) 100%
+        ),
+        url('parrilla.jpeg') center/cover no-repeat;
 }
 
 
-/* IZQUIERDA */
-
-.footer-left {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.footer-brand h2 {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: 1px;
-}
-
-.footer-brand h2 span {
-    color: var(--accent);
-}
-
-.footer-brand p {
-    margin: 5px 0 0;
-    color: var(--text-gray);
-    font-size: 0.9rem;
-}
-
-.footer-access h3,
-.footer-contact h3,
-.footer-hours h3 {
-    color: var(--accent);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 18px;
-    max-width: 500px;
-}
-
-.footer-links a {
-    color: var(--text-gray);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-
-.footer-links a:hover {
-    color: var(--accent);
-}
-
-
-/* SEPARADOR */
-
-.footer-divider {
-    width: 1px;
-    height: 180px;
-    background: var(--border-color);
-}
-
-
-/* DERECHA */
-
-.footer-right {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.footer-contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    color: var(--text-gray);
-    text-decoration: none;
-    margin-bottom: 18px;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    transition: var(--transition);
-}
-
-.footer-contact-item i {
-    color: var(--accent);
-    font-size: 1.1rem;
-    margin-top: 2px;
-    min-width: 18px;
-}
-
-.footer-contact-item:hover {
-    color: #fff;
-}
-
-.footer-hours p {
-    color: var(--text-gray);
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin: 0 0 12px;
-}
-
-.footer-hours strong {
-    color: #fff;
-}
-
-.footer-hours .closed {
-    color: #888;
-    font-size: 0.8rem;
-}
-
-
-/* COPYRIGHT */
-
-.footer-bottom {
-    max-width: 1100px;
-    margin: 45px auto 0;
-    padding: 20px 0;
-    border-top: 1px solid var(--border-color);
-    text-align: center;
-}
-
-.footer-bottom p {
-    margin: 0;
-    color: #666;
-    font-size: 0.75rem;
-}
-
-.footer-bottom strong {
-    color: var(--accent);
-}
-
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 850px) {
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .footer-divider {
-        width: 100%;
-        height: 1px;
-    }
-
-    .footer-right {
-        grid-template-columns: 1fr 1fr;
-    }
-
-}
-
-
-@media (max-width: 550px) {
-
-    .footer-mycfoods {
-        padding-top: 40px;
-    }
-
-    .footer-right {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .footer-links {
-        gap: 10px 15px;
-    }
-
-}
-/* =========================================================
-   CATERING - MENU DESPLEGABLE
-   ========================================================= */
-
-.nav-dropdown {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.nav-dropdown-btn {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    color: var(--text-white);
-    font-family: inherit;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.nav-dropdown-btn:hover {
-    color: var(--accent);
-}
-
-.nav-dropdown-btn i {
-    font-size: 0.65rem;
-    margin-left: 5px;
-}
-
-/* MENÚ DESPLEGABLE */
-.nav-dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    min-width: 180px;
-    background: rgba(11, 11, 11, 0.92);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    z-index: 9999;
-    backdrop-filter: blur(6px);
-}
-
-.nav-dropdown-content a {
-    display: block;
-    padding: 10px 12px;
-    color: var(--text-white);
-    text-decoration: none;
-    white-space: nowrap;
-    border-radius: 6px;
-    font-size: 0.9rem;
-}
-
-.nav-dropdown-content a:hover {
-    color: var(--accent);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-/* PC */
-.nav-dropdown:hover .nav-dropdown-content {
-    display: block;
-}
-
-
-/* =========================================================
-   NAVEGACIÓN MÓVIL
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    .nav-dropdown {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-dropdown-btn {
-        color: var(--text-white);
-        font-size: 0.9rem;
-        padding: 8px 0;
-    }
-
-    .nav-dropdown-content {
-        position: relative;
-        top: auto;
-        right: auto;
-
-        width: 90%;
-        min-width: 0;
-
-        margin-top: 5px;
-
-        max-height: 0;
-        overflow: hidden;
-
-        padding: 0;
-
-        background: rgba(11, 11, 11, 0.92);
-        border: 1px solid var(--border-color);
-
-        opacity: 0;
-
-        transition:
-            max-height 0.3s ease,
-            opacity 0.3s ease,
-            padding 0.3s ease;
-    }
-
-    /* Al tocar Catering en celular */
-    .nav-dropdown:focus-within .nav-dropdown-content {
-        max-height: 220px;
-        overflow-y: auto;
-        padding: 8px;
-
-        opacity: 1;
-
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .nav-dropdown-content a {
-        padding: 10px 12px;
-        font-size: 0.9rem;
-    }
-
-    /* Evita que el menú móvil aplique estilos de botón */
-    .nav-links > a {
-        background: transparent;
-        border: none;
-        box-shadow: none;
-    }
-
-}
 /* =========================================================
    SELECTOR DE GUSTOS DE BOX
 ========================================================= */
@@ -1210,6 +872,571 @@ html {
     line-height: 1.5;
 }
 
+
+/* =========================================================
+   BOTÓN VOLVER ARRIBA
+========================================================= */
+
+#btn-volver-arriba {
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+
+    background: var(--accent);
+    color: var(--bg-main);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-size: 1.1rem;
+
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition: var(--transition);
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+#btn-volver-arriba.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#btn-volver-arriba:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   BOTÓN FLOTANTE DEL CARRITO
+========================================================= */
+
+#floating-cart-btn {
+    position: fixed;
+    bottom: 145px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    background: var(--accent);
+    color: var(--bg-main);
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+#floating-cart-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+#floating-cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+
+    min-width: 20px;
+    height: 20px;
+
+    padding: 0 5px;
+
+    background: #ff3b30;
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   WHATSAPP FLOTANTE
+========================================================= */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    background-color: var(--whatsapp);
+    color: #ffffff;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+    z-index: 999;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: #050505;
+    padding: 70px 0 30px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.motivational-phrase {
+    font-style: italic;
+    font-size: 1.25rem;
+    max-width: 750px;
+    margin: 0 auto 35px;
+    color: var(--text-white);
+}
+
+.btn-whatsapp-footer {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--whatsapp);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.social-links {
+    margin-top: 25px;
+}
+
+.social-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FOOTER MYCFOODS
+========================================================= */
+
+.footer-mycfoods {
+    background: #080808;
+    border-top: 1px solid var(--border-color);
+    padding: 60px 20px 0;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+
+    gap: 45px;
+    align-items: center;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-brand h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.footer-brand h2 span {
+    color: var(--accent);
+}
+
+.footer-brand p {
+    margin: 5px 0 0;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.footer-access h3,
+.footer-contact h3,
+.footer-hours h3 {
+    color: var(--accent);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    max-width: 500px;
+}
+
+.footer-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-divider {
+    width: 1px;
+    height: 180px;
+    background: var(--border-color);
+}
+
+.footer-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    color: var(--text-gray);
+    text-decoration: none;
+
+    margin-bottom: 18px;
+
+    font-size: 0.9rem;
+    line-height: 1.5;
+
+    transition: var(--transition);
+}
+
+.footer-contact-item i {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-top: 2px;
+    min-width: 18px;
+}
+
+.footer-contact-item:hover {
+    color: #fff;
+}
+
+.footer-hours p {
+    color: var(--text-gray);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0 0 12px;
+}
+
+.footer-hours strong {
+    color: #fff;
+}
+
+.footer-hours .closed {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 45px auto 0;
+    padding: 20px 0;
+
+    border-top: 1px solid var(--border-color);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #666;
+    font-size: 0.75rem;
+}
+
+.footer-bottom strong {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   CATERING - MENÚ DESPLEGABLE
+========================================================= */
+
+.nav-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-dropdown-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    color: var(--text-white);
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.nav-dropdown-btn:hover {
+    color: var(--accent);
+}
+
+.nav-dropdown-btn i {
+    font-size: 0.65rem;
+    margin-left: 5px;
+}
+
+
+/* MENÚ DESPLEGABLE */
+
+.nav-dropdown-content {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    min-width: 180px;
+
+    background: rgba(11, 11, 11, 0.92);
+
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+
+    padding: 8px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+    z-index: 9999;
+
+    backdrop-filter: blur(6px);
+}
+
+.nav-dropdown-content a {
+    display: block;
+
+    padding: 10px 12px;
+
+    color: var(--text-white);
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    border-radius: 6px;
+
+    font-size: 0.9rem;
+}
+
+.nav-dropdown-content a:hover {
+    color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* PC */
+
+.nav-dropdown:hover .nav-dropdown-content {
+    display: block;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .footer-right {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .menu-icon {
+        display: block;
+        color: var(--text-white);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: rgba(11, 11, 11, 0.92);
+
+        flex-direction: column;
+        align-items: center;
+
+        padding: 0;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.3s ease-out;
+
+        border-bottom: none;
+    }
+
+    .menu-toggle:checked ~ .nav-links {
+        max-height: 500px;
+        padding: 20px 0;
+        overflow-y: auto;
+    }
+
+
+    /* CATERING EN MÓVIL */
+
+    .nav-dropdown {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-dropdown-btn {
+        color: var(--text-white);
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+
+    .nav-dropdown-content {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        width: 90%;
+        min-width: 0;
+
+        margin-top: 5px;
+
+        max-height: 0;
+        overflow: hidden;
+
+        padding: 0;
+
+        background: rgba(11, 11, 11, 0.92);
+
+        border: 1px solid var(--border-color);
+
+        opacity: 0;
+
+        transition:
+            max-height 0.3s ease,
+            opacity 0.3s ease,
+            padding 0.3s ease;
+    }
+
+    .nav-dropdown:focus-within .nav-dropdown-content {
+        max-height: 220px;
+        overflow-y: auto;
+
+        padding: 8px;
+
+        opacity: 1;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-dropdown-content a {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .nav-links > a {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+
 @media (max-width: 550px) {
 
     .gustos-panel {
@@ -1220,142 +1447,16 @@ html {
         min-height: 44px;
     }
 
+    .footer-mycfoods {
+        padding-top: 40px;
+    }
+
+    .footer-right {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .footer-links {
+        gap: 10px 15px;
+    }
 }
-/* =========================================================
-   BOTONES + / - DE TODA LA PÁGINA
-   MISMO ESTILO QUE LOS GUSTOS DE LOS BOX
-========================================================= */
-
-.btn-qty,
-.btn-qty-menu {
-    width: 25px !important;
-    height: 25px !important;
-    padding: 0 !important;
-
-    border-radius: 50% !important;
-    border: 1px solid var(--accent) !important;
-
-    background: transparent !important;
-    color: var(--accent) !important;
-
-    font-size: 15px !important;
-    font-weight: 800 !important;
-    line-height: 1 !important;
-
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn-qty:hover,
-.btn-qty-menu:hover {
-    background: var(--accent) !important;
-    color: var(--bg-main) !important;
-    border-color: var(--accent) !important;
-}
-
-.btn-qty:disabled,
-.btn-qty-menu:disabled {
-    opacity: 0.25;
-    cursor: not-allowed;
-}
-#box {
-    background:
-        linear-gradient(
-            180deg,
-            rgba(11,11,11,0.70) 0%,
-            rgba(11,11,11,0.95) 100%
-        ),
-        url('fondo.jpg') center/cover no-repeat;
-}
-#pizza-party {
-    background:
-        linear-gradient(
-            180deg,
-            rgba(11,11,11,0.70) 0%,
-            rgba(11,11,11,0.95) 100%
-        ),
-        url('pizza.jpg') center/cover no-repeat;
-}
-#parrilla {
-    background:
-        linear-gradient(
-            180deg,
-            rgba(11,11,11,0.70) 0%,
-            rgba(11,11,11,0.95) 100%
-        ),
-        url('parrilla.jpeg') center/cover no-repeat;
-}
-```css
-/* =========================================================
-   EVENTOS GASTRONÓMICOS - PESTAÑAS
-   ========================================================= */
-
-/* Ocultar los radio buttons */
-.eventos-tabs-container input[type="radio"] {
-    display: none;
-}
-
-
-/* =========================================================
-   BOTONES DE CATEGORÍAS
-   ========================================================= */
-
-.eventos-tabs-container .tabs-header {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-
-.eventos-tabs-container .tab-btn {
-    padding: 10px 20px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--text-gray);
-    transition: var(--transition);
-}
-
-.eventos-tabs-container .tab-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
-
-/* =========================================================
-   CONTENIDO DE LAS CATEGORÍAS
-   ========================================================= */
-
-/* Ocultar todas las categorías */
-.eventos-tabs-container .event-panel {
-    display: none;
-}
-
-
-/* Mostrar solamente la categoría seleccionada */
-
-#tab-viandas:checked ~ .event-panel.cat-event-viandas,
-#tab-parrilla:checked ~ .event-panel.cat-event-parrilla,
-#tab-pizza-party:checked ~ .event-panel.cat-event-pizza,
-#tab-pernil:checked ~ .event-panel.cat-event-pernil {
-    display: block;
-}
-
-
-/* =========================================================
-   BOTÓN ACTIVO
-   ========================================================= */
-
-#tab-viandas:checked ~ .tabs-header label[for="tab-viandas"],
-#tab-parrilla:checked ~ .tabs-header label[for="tab-parrilla"],
-#tab-pizza-party:checked ~ .tabs-header label[for="tab-pizza-party"],
-#tab-pernil:checked ~ .tabs-header label[for="tab-pernil"] {
-    background: var(--accent);
-    color: var(--bg-main);
-    border-color: var(--accent);
-}
-```

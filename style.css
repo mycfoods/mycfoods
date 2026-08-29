@@ -1285,114 +1285,58 @@ html {
         ),
         url('parrilla.jpeg') center/cover no-repeat;
 }
-/* =========================================================
-   ACORDEÓN DE EVENTOS
-========================================================= */
-
-.event-toggle {
-    width: 100%;
-    padding: 18px 20px;
-    margin: 10px 0 0;
-    background: var(--dark-color);
-    color: white;
-    border: 1px solid var(--primary-color);
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-align: left;
-    cursor: pointer;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* =========================================================
-   BOTÓN EVENTOS
-========================================================= */
-
-.event-toggle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    width: 90%;
-    max-width: 700px;
-
-    margin: 25px auto 15px auto;
-    padding: 20px 25px;
-
-    background: var(--dark-color);
-    color: white;
-
-    border: 1px solid var(--primary-color);
-    border-radius: 10px;
-
-    cursor: pointer;
-    text-align: center;
-
-    transition: all 0.3s ease;
-}
-
-.event-toggle:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 176, 32, 0.08);
-}
-
-
-/* TÍTULO */
-
-.event-toggle .event-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-
-/* TEXTO */
-
-.event-toggle .event-description {
-    margin-top: 6px;
-
-    font-size: 0.95rem;
-    opacity: 0.8;
-}
-
-
-/* LLAMADA A LA ACCIÓN */
-
-.event-toggle .event-action {
-    margin-top: 12px;
-
-    color: var(--primary-color);
-
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-
-/* CONTENIDO OCULTO */
-
-.event-content {
-    display: none;
-}
-
-.event-content.open {
-    display: block;
-}
 ```css
 /* =========================================================
    EVENTOS GASTRONÓMICOS - PESTAÑAS
    ========================================================= */
 
-/* Ocultar todos los contenidos inicialmente */
-.event-panel {
+/* Ocultar los radio buttons */
+.eventos-tabs-container input[type="radio"] {
     display: none;
 }
 
-/* Mostrar la categoría seleccionada */
+
+/* =========================================================
+   BOTONES DE CATEGORÍAS
+   ========================================================= */
+
+.eventos-tabs-container .tabs-header {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.eventos-tabs-container .tab-btn {
+    padding: 10px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    transition: var(--transition);
+}
+
+.eventos-tabs-container .tab-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   CONTENIDO DE LAS CATEGORÍAS
+   ========================================================= */
+
+/* Ocultar todas las categorías */
+.eventos-tabs-container .event-panel {
+    display: none;
+}
+
+
+/* Mostrar solamente la categoría seleccionada */
 
 #tab-viandas:checked ~ .event-panel.cat-event-viandas,
 #tab-parrilla:checked ~ .event-panel.cat-event-parrilla,
@@ -1402,7 +1346,9 @@ html {
 }
 
 
-/* Botón activo */
+/* =========================================================
+   BOTÓN ACTIVO
+   ========================================================= */
 
 #tab-viandas:checked ~ .tabs-header label[for="tab-viandas"],
 #tab-parrilla:checked ~ .tabs-header label[for="tab-parrilla"],

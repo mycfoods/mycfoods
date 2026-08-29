@@ -1466,3 +1466,13 @@ details[open] .prod-name i {
         gap: 10px 15px;
     }
 }
+/* =========================================================
+   INTEGRACIÓN DEL CONTENIDO CON EL FONDO DE CATERING
+========================================================= */
+
+.event-panel.cat-event-pizza .info-card,
+.event-panel.cat-event-parrilla .info-card,
+.event-panel.cat-event-pernil .info-card {
+    background: transparent;
+    border-color: transparent;
+}

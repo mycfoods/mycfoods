@@ -882,348 +882,557 @@
             </div>
         </div>
         </section>
-   <!-- SECCIÓN VIANDAS CORPORATIVAS -->
-    <section id="viandas-corporativas" class="section bg-darker">
-        <div class="container">
-            <div class="section-title">
-                <span class="sub-title">SERVICIO PARA EMPRESAS</span>
-                <h2>Viandas Corporativas</h2>
-                <p>Comida casera, variada y a tiempo para tu equipo de trabajo.</p>
+  ```html
+<!-- =========================================================
+     SECCIÓN EVENTOS GASTRONÓMICOS
+     ========================================================= -->
+
+<section id="eventos" class="section bg-darker">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span class="sub-title">EVENTOS GASTRONÓMICOS</span>
+            <h2>Nuestras Propuestas</h2>
+            <p>Elegí la propuesta ideal para tu evento.</p>
+        </div>
+
+
+        <!-- =====================================================
+             PESTAÑAS DE EVENTOS
+             ===================================================== -->
+
+        <div class="menu-tabs-container eventos-tabs-container">
+
+            <!-- Radio Buttons -->
+            <input type="radio" name="event-filter" id="tab-viandas" checked>
+            <input type="radio" name="event-filter" id="tab-parrilla">
+            <input type="radio" name="event-filter" id="tab-pizza-party">
+            <input type="radio" name="event-filter" id="tab-pernil">
+
+
+            <!-- Botones -->
+            <div class="tabs-header">
+
+                <label for="tab-viandas" class="tab-btn">
+                    Viandas Corporativas
+                </label>
+
+                <label for="tab-parrilla" class="tab-btn">
+                    Parrilla Entre Panes
+                </label>
+
+                <label for="tab-pizza-party" class="tab-btn">
+                    Pizza Party
+                </label>
+
+                <label for="tab-pernil" class="tab-btn">
+                    Pernil de Cerdo
+                </label>
+
             </div>
 
-            <div class="info-card" style="max-width: 900px; margin: 0 auto 30px auto; text-align: left;">
-                <h3 style="color: var(--primary-color);"><i class="fa-solid fa-clipboard-list"></i> ¿Cómo funciona el Servicio de Viandas?</h3>
-                <p style="margin-bottom: 10px;">Cada integrante del equipo puede optar diariamente por:</p>
-                <ul style="margin-left: 20px; line-height: 1.8;">
-                    <li><strong>Opción 1:</strong> El <strong>Menú del Día</strong> programado.</li>
-                    <li><strong>Opción 2 (Menú Alternativo):</strong> Elegir o armar su vianda entre opciones fijas:
-                        <ul>
-                            <li>Tartas individuales (600g aprox)</li>
-                            <li>Minutas / Proteínas</li>
-                            <li>Pastas caseras</li>
-                            <li>Salad Bar + Guarnición caliente</li>
-                        </ul>
-                    </li>
-                </ul>
-                <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;"><em>* Modalidad de Reserva: Se encarga con anticipación hasta las 10:00 hs del mismo día. Entrega de Lunes a Viernes.</em></p>
-            </div>
 
-            <div class="info-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                <div class="info-card" style="border: 2px solid var(--primary-color);">
-                    <i class="fa-solid fa-users"></i>
-                    <h3>Plan Básico Viandas</h3>
-                    <p>A partir de <strong>3 viandas diarias</strong>.</p>
-                    <p>Ideal para pequeños equipos u oficinas.(abono mensual)</p>
-                    <h4 style="font-size: 1.5rem; color: var(--primary-color); margin: 15px 0;">$12.800 <small style="font-size: 0.6em;">/ unidad</small></h4>
+            <!-- =================================================
+                 VIANDAS CORPORATIVAS
+                 ================================================= -->
 
-                    <!-- Antes: sumaba al carrito. Ahora: redirige a Google Form para cotizar -->
-                    <a href="https://forms.gle/mes5pMeBry1thbs86" target="_blank" class="btn btn-primary" style="display:block; text-align:center; text-decoration:none;">
-                        Cotizar Plan Básico
-                    </a>
+            <div class="event-panel cat-event-viandas" id="viandas-corporativas">
+
+                <div class="info-card"
+                     style="max-width:900px; margin:0 auto 30px auto; text-align:left;">
+
+                    <h3 style="color:var(--primary-color);">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        ¿Cómo funciona el Servicio de Viandas?
+                    </h3>
+
+                    <p style="margin-bottom:10px;">
+                        Cada integrante del equipo puede optar diariamente por:
+                    </p>
+
+                    <ul style="margin-left:20px; line-height:1.8;">
+
+                        <li>
+                            <strong>Opción 1:</strong>
+                            El <strong>Menú del Día</strong> programado.
+                        </li>
+
+                        <li>
+                            <strong>Opción 2 (Menú Alternativo):</strong>
+                            Elegir o armar su vianda entre opciones fijas:
+
+                            <ul>
+                                <li>Tartas individuales (600g aprox)</li>
+                                <li>Minutas / Proteínas</li>
+                                <li>Pastas caseras</li>
+                                <li>Salad Bar + Guarnición caliente</li>
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+                    <p style="margin-top:15px; font-size:0.9em; opacity:0.8;">
+                        <em>
+                            * Modalidad de Reserva: Se encarga con anticipación
+                            hasta las 10:00 hs del mismo día.
+                            Entrega de Lunes a Viernes.
+                        </em>
+                    </p>
+
                 </div>
 
-                <div class="info-card" style="border: 2px solid var(--primary-color); background: rgba(255, 255, 255, 0.03);">
-                    <i class="fa-solid fa-building"></i>
-                    <h3>Plan Completo Viandas</h3>
-                    <p>A partir de <strong>5 viandas diarias</strong>.</p>
-                    <p>Descuento especial por volumen corporativo (abono mensual).</p>
-                    <h4 style="font-size: 1.5rem; color: var(--primary-color); margin: 15px 0;">$11.500 <small style="font-size: 0.6em;">/ unidad</small></h4>
 
-                    <!-- Antes: sumaba al carrito. Ahora: redirige a Google Form para cotizar -->
-                    <a href="https://forms.gle/mes5pMeBry1thbs86" target="_blank" class="btn btn-primary" style="display:block; text-align:center; text-decoration:none;">
-                        Cotizar Plan Completo
-                    </a>
+                <div class="info-grid"
+                     style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+
+                    <!-- PLAN BÁSICO -->
+
+                    <div class="info-card"
+                         style="border:2px solid var(--primary-color);">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <h3>Plan Básico Viandas</h3>
+
+                        <p>
+                            A partir de <strong>3 viandas diarias</strong>.
+                        </p>
+
+                        <p>
+                            Ideal para pequeños equipos u oficinas.
+                            (abono mensual)
+                        </p>
+
+                        <h4 style="font-size:1.5rem;
+                                   color:var(--primary-color);
+                                   margin:15px 0;">
+
+                            $12.800
+                            <small style="font-size:0.6em;">
+                                / unidad
+                            </small>
+
+                        </h4>
+
+                        <a href="https://forms.gle/mes5pMeBry1thbs86"
+                           target="_blank"
+                           class="btn btn-primary"
+                           style="display:block;
+                                  text-align:center;
+                                  text-decoration:none;">
+
+                            Cotizar Plan Básico
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- PLAN COMPLETO -->
+
+                    <div class="info-card"
+                         style="border:2px solid var(--primary-color);
+                                background:rgba(255,255,255,0.03);">
+
+                        <i class="fa-solid fa-building"></i>
+
+                        <h3>Plan Completo Viandas</h3>
+
+                        <p>
+                            A partir de <strong>5 viandas diarias</strong>.
+                        </p>
+
+                        <p>
+                            Descuento especial por volumen corporativo
+                            (abono mensual).
+                        </p>
+
+                        <h4 style="font-size:1.5rem;
+                                   color:var(--primary-color);
+                                   margin:15px 0;">
+
+                            $11.500
+                            <small style="font-size:0.6em;">
+                                / unidad
+                            </small>
+
+                        </h4>
+
+                        <a href="https://forms.gle/mes5pMeBry1thbs86"
+                           target="_blank"
+                           class="btn btn-primary"
+                           style="display:block;
+                                  text-align:center;
+                                  text-decoration:none;">
+
+                            Cotizar Plan Completo
+
+                        </a>
+
+                    </div>
+
                 </div>
+
             </div>
-            
-             <!-- =========================================================
-     SECCIÓN PARRILLA ENTRE PANES
-     ========================================================= -->
-<button class="event-toggle" onclick="toggleEvent('parrilla')">
 
-    <span class="event-title">
-        Parrilla Entre Panes
-    </span>
 
-    <span class="event-description">
-        Una propuesta informal de parrilla para compartir y disfrutar.
-    </span>
+            <!-- =================================================
+                 PARRILLA ENTRE PANES
+                 ================================================= -->
 
-    <span class="event-action">
-        VER PROPUESTA ↓
-    </span>
+            <div class="event-panel cat-event-parrilla"
+                 id="parrilla">
 
-</button>
+                <div class="info-card"
+                     style="max-width:900px;
+                            margin:0 auto 30px auto;
+                            text-align:left;">
 
-<div id="parrilla-content" class="event-content">
-<section id="parrilla" class="section bg-darker">
-    <div class="container">
+                    <h3 style="color:var(--primary-color);">
 
-        <div class="section-title">
-            <span class="sub-title">EVENTOS GASTRONÓMICOS</span>
-            <h2>Parrilla Entre Panes</h2>
-            <p>Una propuesta informal de parrilla para compartir y disfrutar.</p>
-        </div>
+                        <i class="fa-solid fa-fire"></i>
 
-        <div class="info-card" style="max-width: 900px; margin: 0 auto 30px auto; text-align: left;">
+                        Presupuesto Parrilla Entre Panes
 
-            <h3 style="color: var(--primary-color);">
-                <i class="fa-solid fa-fire"></i>
-                Presupuesto Parrilla Entre Panes
-            </h3>
+                    </h3>
 
-            <p>
-                <strong>Mínimo 35 personas.</strong>
-            </p>
+                    <p>
+                        <strong>Mínimo 35 personas.</strong>
+                    </p>
 
-            <h4 style="color: var(--primary-color); margin-top: 20px;">
-                Recepción
-            </h4>
 
-            <ul style="margin-left: 20px; line-height: 1.8;">
-                <li>Empanadas de carne a cuchillo</li>
-                <li>Chorizo bombón</li>
-                <li>Morcilla bombón</li>
-            </ul>
+                    <h4 style="color:var(--primary-color);
+                               margin-top:20px;">
+                        Recepción
+                    </h4>
 
-            <h4 style="color: var(--primary-color); margin-top: 20px;">
-                Plato Principal
-            </h4>
+                    <ul style="margin-left:20px; line-height:1.8;">
 
-            <ul style="margin-left: 20px; line-height: 1.8;">
-                <li>Sándwich de bondiola</li>
-                <li>Sándwich de ojo de bife</li>
-            </ul>
+                        <li>Empanadas de carne a cuchillo</li>
+                        <li>Chorizo bombón</li>
+                        <li>Morcilla bombón</li>
 
-            <h4 style="color: var(--primary-color); margin-top: 20px;">
-                Incluye
-            </h4>
+                    </ul>
 
-            <p>
-                Pan y aderezos:
-                chimichurri, criolla, mayonesa, mostaza, kétchup,
-                barbacoa, cebolla caramelizada, lechuga, tomate y cebolla.
-            </p>
 
-            <h4 style="color: var(--primary-color); margin-top: 20px;">
-                Postre
-            </h4>
+                    <h4 style="color:var(--primary-color);
+                               margin-top:20px;">
+                        Plato Principal
+                    </h4>
 
-            <p>Paleta de helado.</p>
+                    <ul style="margin-left:20px; line-height:1.8;">
 
-            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
-                <em>
-                    * El precio se congela con el 50% de seña.
-                </em>
-            </p>
+                        <li>Sándwich de bondiola</li>
+                        <li>Sándwich de ojo de bife</li>
 
-        </div>
+                    </ul>
 
-        <div style="text-align: center; margin-top: 25px;">
 
-            <a href="https://forms.gle/NGr2C1YFciTGPxae9"
-               target="_blank"
-               class="btn btn-primary"
-               style="display: inline-block; text-decoration: none;">
-                Cotizar Parrilla
-            </a>
+                    <h4 style="color:var(--primary-color);
+                               margin-top:20px;">
+                        Incluye
+                    </h4>
+
+                    <p>
+                        Pan y aderezos:
+                        chimichurri, criolla, mayonesa, mostaza,
+                        kétchup, barbacoa, cebolla caramelizada,
+                        lechuga, tomate y cebolla.
+                    </p>
+
+
+                    <h4 style="color:var(--primary-color);
+                               margin-top:20px;">
+                        Postre
+                    </h4>
+
+                    <p>
+                        Paleta de helado.
+                    </p>
+
+
+                    <p style="margin-top:20px;
+                              font-size:0.9em;
+                              opacity:0.8;">
+
+                        <em>
+                            * El precio se congela con el 50% de seña.
+                        </em>
+
+                    </p>
+
+                </div>
+
+
+                <div style="text-align:center;
+                            margin-top:25px;">
+
+                    <a href="https://forms.gle/NGr2C1YFciTGPxae9"
+                       target="_blank"
+                       class="btn btn-primary"
+                       style="display:inline-block;
+                              text-decoration:none;">
+
+                        Cotizar Parrilla
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PIZZA PARTY
+                 ================================================= -->
+
+            <div class="event-panel cat-event-pizza"
+                 id="pizza-party">
+
+                <div class="info-card"
+                     style="max-width:900px;
+                            margin:0 auto 30px auto;
+                            text-align:left;">
+
+                    <h3 style="color:var(--primary-color);">
+
+                        <i class="fa-solid fa-pizza-slice"></i>
+
+                        Presupuesto Pizza Party
+
+                    </h3>
+
+                    <p>
+                        <strong>Mínimo 30 personas.</strong>
+                    </p>
+
+
+                    <h4 style="color:var(--primary-color);
+                               margin-top:20px;">
+                        Recepción
+                    </h4>
+
+                    <p>
+                        Brusquetas con pan de pizza.
+                    </p>
+
+
+                    <h4 style="color:var(--primary-color);
+                               margin-top:20px;">
+                        Entradas — Empanadas
+                    </h4>
+
+                    <p>
+                        4 sabores a elección entre:
+                    </p>
+
+                    <ul style="margin-left:20px; line-height:1.8;">
+
+                        <li>Jamón y queso</li>
+                        <li>Carne</li>
+                        <li>Carne a cuchillo</li>
+                        <li>Pollo</li>
+                        <li>Verdura y salsa blanca</li>
+                        <li>Cebolla y queso</li>
+
+                    </ul>
+
+
+                    <h4 style="color:var(--primary-color);
+                               margin-top:20px;">
+                        Principal — Pizza Party
+                    </h4>
+
+                    <p>
+                        6 sabores a elección entre:
+                    </p>
+
+                    <ul style="margin-left:20px; line-height:1.8;">
+
+                        <li>Muzzarella</li>
+                        <li>Jamón y queso</li>
+                        <li>Jamón y morrón</li>
+                        <li>Cuatro quesos</li>
+                        <li>Panceta</li>
+                        <li>Fugazzeta</li>
+                        <li>Cebolla caramelizada</li>
+                        <li>Rúcula y parmesano</li>
+                        <li>Napolitana</li>
+                        <li>Jamón y huevo</li>
+
+                    </ul>
+
+
+                    <p style="margin-top:15px;
+                              font-size:0.9em;
+                              opacity:0.8;">
+
+                        <em>
+                            * Consultar por sabores fuera de carta.
+                        </em>
+
+                    </p>
+
+
+                    <p style="margin-top:20px;
+                              font-size:0.9em;
+                              opacity:0.8;">
+
+                        <em>
+                            * El precio se congela con el 50% de seña.
+                        </em>
+
+                    </p>
+
+                </div>
+
+
+                <div style="text-align:center;
+                            margin-top:25px;">
+
+                    <a href="https://forms.gle/NGr2C1YFciTGPxae9"
+                       target="_blank"
+                       class="btn btn-primary"
+                       style="display:inline-block;
+                              text-decoration:none;">
+
+                        Cotizar Pizza Party
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PERNIL DE CERDO
+                 ================================================= -->
+
+            <div class="event-panel cat-event-pernil"
+                 id="pernil">
+
+                <div class="info-card"
+                     style="max-width:900px;
+                            margin:0 auto 30px auto;
+                            text-align:left;">
+
+                    <h3 style="color:var(--primary-color);">
+
+                        <i class="fa-solid fa-drumstick-bite"></i>
+
+                        Servicio de Pernil de Cerdo
+
+                    </h3>
+
+                    <p>
+                        <strong>Capacidad: Mínimo 30 personas.</strong>
+                    </p>
+
+
+                    <h4 style="color:var(--primary-color);
+                               margin-top:20px;">
+                        Incluye
+                    </h4>
+
+                    <p>
+                        Figacitas de manteca.
+                    </p>
+
+
+                    <h4 style="color:var(--primary-color);
+                               margin-top:20px;">
+                        Salsas
+                    </h4>
+
+                    <ul style="margin-left:20px; line-height:1.8;">
+
+                        <li>Queso crema con ciboulette</li>
+                        <li>Barbacoa</li>
+                        <li>Salsa criolla</li>
+                        <li>Mayonesa de albahaca</li>
+                        <li>Hummus</li>
+                        <li>Chimichurri</li>
+                        <li>Mostaza con miel</li>
+
+                    </ul>
+
+
+                    <h4 style="color:var(--primary-color);
+                               margin-top:20px;">
+                        Presentación
+                    </h4>
+
+                    <ul style="margin-left:20px; line-height:1.8;">
+
+                        <li>Pieza entera para filetear</li>
+                        <li>Desmenuzado</li>
+
+                    </ul>
+
+
+                    <h4 style="color:var(--primary-color);
+                               margin-top:20px;">
+                        Regeneración
+                    </h4>
+
+                    <ul style="margin-left:20px; line-height:1.8;">
+
+                        <li>
+                            <strong>Entero:</strong>
+                            llega caliente y se regenera
+                            10 minutos a 200 °C.
+                        </li>
+
+                        <li>
+                            <strong>Desmenuzado:</strong>
+                            llega frío y se regenera
+                            20 minutos a 200 °C.
+                        </li>
+
+                    </ul>
+
+
+                    <p style="margin-top:20px;
+                              font-size:0.9em;
+                              opacity:0.8;">
+
+                        <em>
+                            * El pedido debe realizarse con
+                            48 horas de anticipación.
+                        </em>
+
+                    </p>
+
+                </div>
+
+
+                <div style="text-align:center;
+                            margin-top:25px;">
+
+                    <a href="https://forms.gle/NGr2C1YFciTGPxae9"
+                       target="_blank"
+                       class="btn btn-primary"
+                       style="display:inline-block;
+                              text-decoration:none;">
+
+                        Cotizar Pernil
+
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
     </div>
+
 </section>
-</div>
+```
 
-<!-- =========================================================
-     SECCIÓN PIZZA PARTY
-     ========================================================= -->
-
-<section id="pizza-party" class="section bg-darker">
-    <div class="container">
-
-        <div class="section-title">
-            <span class="sub-title">EVENTOS GASTRONÓMICOS</span>
-            <h2>Pizza Party</h2>
-            <p>Una propuesta ideal para eventos, celebraciones y reuniones.</p>
-        </div>
-
-        <div class="info-card" style="max-width: 900px; margin: 0 auto 30px auto; text-align: left;">
-
-            <h3 style="color: var(--primary-color);">
-                <i class="fa-solid fa-pizza-slice"></i>
-                Presupuesto Pizza Party
-            </h3>
-
-            <p>
-                <strong>Mínimo 30 personas.</strong>
-            </p>
-
-            <h4 style="color: var(--primary-color); margin-top: 20px;">
-                Recepción
-            </h4>
-
-            <p>
-                Brusquetas con pan de pizza.
-            </p>
-
-            <h4 style="color: var(--primary-color); margin-top: 20px;">
-                Entradas — Empanadas
-            </h4>
-
-            <p>
-                4 sabores a elección entre:
-            </p>
-
-            <ul style="margin-left: 20px; line-height: 1.8;">
-                <li>Jamón y queso</li>
-                <li>Carne</li>
-                <li>Carne a cuchillo</li>
-                <li>Pollo</li>
-                <li>Verdura y salsa blanca</li>
-                <li>Cebolla y queso</li>
-            </ul>
-
-            <h4 style="color: var(--primary-color); margin-top: 20px;">
-                Principal — Pizza Party
-            </h4>
-
-            <p>
-                6 sabores a elección entre:
-            </p>
-
-            <ul style="margin-left: 20px; line-height: 1.8;">
-                <li>Muzzarella</li>
-                <li>Jamón y queso</li>
-                <li>Jamón y morrón</li>
-                <li>Cuatro quesos</li>
-                <li>Panceta</li>
-                <li>Fugazzeta</li>
-                <li>Cebolla caramelizada</li>
-                <li>Rúcula y parmesano</li>
-                <li>Napolitana</li>
-                <li>Jamón y huevo</li>
-            </ul>
-
-            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
-                <em>
-                    * Consultar por sabores fuera de carta.
-                </em>
-            </p>
-
-            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
-                <em>
-                    * El precio se congela con el 50% de seña.
-                </em>
-            </p>
-
-        </div>
-
-        <div style="text-align: center; margin-top: 25px;">
-
-            <a href="https://forms.gle/NGr2C1YFciTGPxae9"
-               target="_blank"
-               class="btn btn-primary"
-               style="display: inline-block; text-decoration: none;">
-                Cotizar Pizza Party
-            </a>
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- =========================================================
-     SECCIÓN PERNIL DE CERDO
-     ========================================================= -->
-
-<section id="pernil" class="section bg-darker">
-    <div class="container">
-
-        <div class="section-title">
-            <span class="sub-title">EVENTOS GASTRONÓMICOS</span>
-            <h2>Pernil de Cerdo</h2>
-            <p>Una propuesta abundante y práctica para agregarle a tus eventos.</p>
-        </div>
-
-        <div class="info-card" style="max-width: 900px; margin: 0 auto 30px auto; text-align: left;">
-
-            <h3 style="color: var(--primary-color);">
-                <i class="fa-solid fa-drumstick-bite"></i>
-                Servicio de Pernil de Cerdo
-            </h3>
-
-            <p>
-                <strong>Capacidad: Minimo 30 personas.</strong>
-            </p>
-
-            <h4 style="color: var(--primary-color); margin-top: 20px;">
-                Incluye
-            </h4>
-
-            <p>
-                 figacitas de manteca.
-            </p>
-
-            <h4 style="color: var(--primary-color); margin-top: 20px;">
-                Salsas
-            </h4>
-
-            <ul style="margin-left: 20px; line-height: 1.8;">
-                <li>Queso crema con ciboulette</li>
-                <li>Barbacoa</li>
-                <li>Salsa criolla</li>
-                <li>Mayonesa de albahaca</li>
-                <li>Hummus</li>
-                <li>Chimichurri</li>
-                <li>Mostaza con miel</li>
-            </ul>
-
-            <h4 style="color: var(--primary-color); margin-top: 20px;">
-                Presentación
-            </h4>
-
-            <ul style="margin-left: 20px; line-height: 1.8;">
-                <li>Pieza entera para filetear</li>
-                <li>Desmenuzado</li>
-            </ul>
-
-            <h4 style="color: var(--primary-color); margin-top: 20px;">
-                Regeneración
-            </h4>
-
-            <ul style="margin-left: 20px; line-height: 1.8;">
-                <li>
-                    <strong>Entero:</strong>
-                    llega caliente y se regenera 10 minutos a 200 °C.
-                </li>
-                <li>
-                    <strong>Desmenuzado:</strong>
-                    llega frío y se regenera 20 minutos a 200 °C.
-                </li>
-            </ul>
-
-            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
-                <em>
-                    * El pedido debe realizarse con 48 horas de anticipación.
-                </em>
-            </p>
-
-        </div>
-
-        <div style="text-align: center; margin-top: 25px;">
-
-            <a href="https://forms.gle/NGr2C1YFciTGPxae9"
-               target="_blank"
-               class="btn btn-primary"
-               style="display: inline-block; text-decoration: none;">
-                Cotizar Pernil
-            </a>
-
-        </div>
-
-    </div>
-</section>
     <!-- ================================================================
      SECCIÓN BOX
      ================================================================ -->

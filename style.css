@@ -728,7 +728,11 @@ details[open] .prod-name i {
         url('fondo.jpg') center/cover no-repeat;
 }
 
-#pizza-party {
+/* =========================================================
+   FONDOS CATERING
+========================================================= */
+
+.event-panel.cat-event-pizza {
     background:
         linear-gradient(
             180deg,
@@ -738,7 +742,7 @@ details[open] .prod-name i {
         url('pizza.jpg') center/cover no-repeat;
 }
 
-#parrilla {
+.event-panel.cat-event-parrilla {
     background:
         linear-gradient(
             180deg,

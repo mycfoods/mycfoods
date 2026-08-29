@@ -1307,9 +1307,73 @@ html {
     align-items: center;
 }
 
-.event-toggle:hover {
-    background: rgba(255, 176, 32, 0.1);
+/* =========================================================
+   BOTÓN EVENTOS
+========================================================= */
+
+.event-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 90%;
+    max-width: 700px;
+
+    margin: 25px auto 15px auto;
+    padding: 20px 25px;
+
+    background: var(--dark-color);
+    color: white;
+
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+
+    cursor: pointer;
+    text-align: center;
+
+    transition: all 0.3s ease;
 }
+
+.event-toggle:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 176, 32, 0.08);
+}
+
+
+/* TÍTULO */
+
+.event-toggle .event-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+
+/* TEXTO */
+
+.event-toggle .event-description {
+    margin-top: 6px;
+
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+
+/* LLAMADA A LA ACCIÓN */
+
+.event-toggle .event-action {
+    margin-top: 12px;
+
+    color: var(--primary-color);
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+
+/* CONTENIDO OCULTO */
 
 .event-content {
     display: none;

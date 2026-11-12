@@ -33,15 +33,17 @@
 
         <div class="nav-links">
 
-            <a href="#quienes-somos">Quiénes Somos</a>
+            <a href="#box">Box</a>
 
             <a href="#menu">Menú</a>
-            
+
             <a href="#catering">Catering</a>
 
             <a href="#carrito">Carrito</a>
 
             <a href="#horarios">Horarios & Ubicación</a>
+
+            <a href="#quienes-somos">Quiénes Somos</a>
 
             <a href="#carrito" class="btn-nav">
                 <i class="fa-solid fa-cart-shopping"></i> Pedir
@@ -63,44 +65,1548 @@
             </div>
         </div>
     </header>
- </section>
-  
-    <!-- SECCIÓN QUIÉNES SOMOS -->
-    <section id="quienes-somos" class="section">
+
+    <!-- =====================================================
+         SECCIÓN BOX - ARMÁ TU BOX
+         ===================================================== -->
+    <section id="box" class="section">
+
+        <style>
+
+            #box .box-subcategory-title {
+                font-size: 1.35rem;
+                color: var(--primary-color);
+                margin: 25px 0 15px;
+                text-align: left;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+                padding-bottom: 10px;
+            }
+
+            #box .box-category {
+                display: none;
+                width: 100%;
+            }
+
+            #box-tab-packs:checked ~ .box-content .box-category-packs {
+                display: block;
+            }
+
+            #box-tab-empanadas:checked ~ .box-content .box-category-empanadas {
+                display: block;
+            }
+
+            #box-tab-sandwichs:checked ~ .box-content .box-category-sandwichs {
+                display: block;
+            }
+
+            #box-tab-packs:checked ~ .tabs-header label[for="box-tab-packs"],
+            #box-tab-empanadas:checked ~ .tabs-header label[for="box-tab-empanadas"],
+            #box-tab-sandwichs:checked ~ .tabs-header label[for="box-tab-sandwichs"] {
+                background: var(--primary-color);
+                color: #111;
+                border-color: var(--primary-color);
+            }
+
+            #box .box-tabs-container > input[type="radio"] {
+                display: none;
+            }
+
+            #box .box-tabs-container .tabs-header {
+                margin-bottom: 25px;
+            }
+
+            #box .box-category .menu-accordion-grid {
+                width: 100%;
+            }
+
+            #box .box-price-note {
+                font-size: 0.82rem;
+                opacity: 0.7;
+                margin-top: 5px;
+            }
+
+            #box .box-qty-zero {
+                color: var(--primary-color);
+            }
+
+        </style>
+
+
         <div class="container">
+
             <div class="section-title">
-                <span class="sub-title">QUIÉNES SOMOS</span>
-                <h2>Nuestra Esencia</h2>
+
+                <span class="sub-title">Finger Foods</span>
+
+                <h2>Armá tu Box</h2>
+
+                <p>
+                    Elegí tu Box armado listo para compartir!! <br>
+                    O armalo a tu gusto con nuestras Empanaditas,
+                    mini sándwiches y finger foods ideales para
+                    picadas, reuniones y eventos.<br>
+                    (se reserva con 48 hs de anticipacion).
+                </p>
+
             </div>
-            
-            <div class="info-grid">
-                <div class="info-card" style="text-align: left;">
-                    <i class="fa-solid fa-heart"></i>
-                    <h3>¿Quiénes Somos?</h3>
-                    <p>Somos una pareja de cocineros que buscamos dar lo mejor de nosotros cada día.</p>
-                    <p>Nos distingue la calidad, la frescura y el amor en cada producto que ofrecemos.</p>
+
+
+            <!-- =================================================
+                 PESTAÑAS INTERNAS DEL BOX
+                 ================================================= -->
+
+            <div class="box-tabs-container">
+
+                <input type="radio"
+                       name="box-filter"
+                       id="box-tab-packs"
+                       checked>
+
+                <input type="radio"
+                       name="box-filter"
+                       id="box-tab-empanadas">
+
+                <input type="radio"
+                       name="box-filter"
+                       id="box-tab-sandwichs">
+
+
+                <div class="tabs-header">
+
+                    <label for="box-tab-packs" class="tab-btn">
+                        Packs Armados
+                    </label>
+
+                    <label for="box-tab-empanadas" class="tab-btn">
+                        Empanadas
+                    </label>
+
+                    <label for="box-tab-sandwichs" class="tab-btn">
+                        Sándwiches
+                    </label>
+
                 </div>
 
-                <div class="info-card" style="text-align: left;">
-                    <i class="fa-solid fa-bell-concierge"></i>
-                    <h3>¿Qué Ofrecemos?</h3>
-                    <p>• <strong>Menú a la carta:</strong> Platos preparados al momento.</p>
-                    <p>• <strong>Menú del día:</strong> Variedad y precio accesible.</p>
-                    <p>• <strong>Productos distintos cada día:</strong> Siempre algo nuevo para descubrir.</p>
-                    <p>• <strong>Catering para eventos:</strong> Personales, privados y corporativos.</p>
+
+                <!-- =================================================
+                     CONTENIDO DEL BOX
+                     ================================================= -->
+
+                <div class="box-content">
+
+
+                    <!-- =================================================
+                         PACKS ARMADOS
+                         ================================================= -->
+
+                    <div class="box-category box-category-packs">
+
+                        <h3 class="box-subcategory-title">
+                            <i class="fa-solid fa-box-open"></i>
+                            Packs Armados
+                        </h3>
+
+                        <div class="menu-accordion-grid">
+
+
+                            <!-- BOX PARA DOS -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Box para Dos
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        8 empanaditas a elección,
+                                        4 mini cheese burger,
+                                        4 sándwiches de mayo,
+                                        jamón y queso y
+                                        4 sándwiches de mayo pesto,
+                                        queso y tomate.
+                                    </p>
+
+                                    <div class="box-gustos">
+
+                                        <div class="box-gustos-header">
+
+                                            <strong>
+                                                Elegí tus empanaditas
+                                            </strong>
+
+                                            <span class="box-gustos-contador">
+                                                <span class="gustos-total">0</span> / 8
+                                            </span>
+
+                                        </div>
+
+                                        <button
+                                            type="button"
+                                            class="btn-mostrar-gustos"
+                                            onclick="mostrarGustosBox(this)">
+                                            <i class="fa-solid fa-plus"></i>
+                                            Elegir gustos
+                                        </button>
+
+                                        <div class="gustos-panel">
+
+                                            <div class="gusto-row">
+                                                <span>Carne cortada a cuchillo</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Jamón y queso</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Espinaca y salsa blanca</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Pollo</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Cebolla caramelizada</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Cuatro quesos</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Bondiola braseada</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Caprese</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="gustos-resumen"></div>
+
+                                    </div>
+
+                                    <div class="item-action">
+
+                                        <span class="price">
+                                            $54.300
+                                        </span>
+
+                                        <button
+                                            class="btn-add"
+                                            onclick="agregarBoxConGustos(this, 'Box para Dos', 54300, 8)">
+                                            + Agregar
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- BOX PARA CUATRO -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Box para Cuatro
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        16 empanaditas a elección,
+                                        6 mini cheese burgers,
+                                        6 sándwiches de mayo,
+                                        jamón y queso,
+                                        6 sándwiches de mayo pesto,
+                                        queso y tomate y
+                                        6 sándwiches de jamón crudo,
+                                        rúcula y queso crema.
+                                    </p>
+
+                                    <div class="box-gustos">
+
+                                        <div class="box-gustos-header">
+
+                                            <strong>
+                                                Elegí tus empanaditas
+                                            </strong>
+
+                                            <span class="box-gustos-contador">
+                                                <span class="gustos-total">0</span> / 16
+                                            </span>
+
+                                        </div>
+
+                                        <button
+                                            type="button"
+                                            class="btn-mostrar-gustos"
+                                            onclick="mostrarGustosBox(this)">
+                                            <i class="fa-solid fa-plus"></i>
+                                            Elegir gustos
+                                        </button>
+
+                                        <div class="gustos-panel">
+
+                                            <div class="gusto-row">
+                                                <span>Carne cortada a cuchillo</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Jamón y queso</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Espinaca y salsa blanca</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Pollo</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Cebolla caramelizada</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Cuatro quesos</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Bondiola braseada</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="gusto-row">
+                                                <span>Caprese</span>
+                                                <div class="gusto-control">
+                                                    <button type="button" onclick="cambiarGusto(this,-1)">−</button>
+                                                    <span class="gusto-cantidad">0</span>
+                                                    <button type="button" onclick="cambiarGusto(this,1)">+</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="gustos-resumen"></div>
+
+                                    </div>
+
+                                    <div class="item-action">
+
+                                        <span class="price">
+                                            $110.000
+                                        </span>
+
+                                        <button
+                                            class="btn-add"
+                                            onclick="agregarBoxConGustos(this, 'Box para Cuatro', 110000, 16)">
+                                            + Agregar
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         EMPANADAS
+                         ================================================= -->
+
+                    <div class="box-category box-category-empanadas">
+
+                        <h3 class="box-subcategory-title">
+                            <i class="fa-solid fa-pizza-slice"></i>
+                            Empanadas
+                        </h3>
+
+                        <div class="menu-accordion-grid">
+
+
+                            <!-- CARNE A CUCHILLO -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Empanada de Carne a Cuchillo
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Media docena copetín.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="carneCuchillo">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Empanada de Carne a Cuchillo', PRECIOS_BOX.empanadas.carneCuchillo)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- JAMÓN Y QUESO -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Empanada de Jamón y Queso
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Media docena copetín.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="jamonQueso">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Empanada de Jamón y Queso', PRECIOS_BOX.empanadas.jamonQueso)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- ESPINACA -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Empanada de Espinaca y Salsa Blanca
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Media docena copetín.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="espinacaSalsaBlanca">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Empanada de Espinaca y Salsa Blanca', PRECIOS_BOX.empanadas.espinacaSalsaBlanca)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- POLLO -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Empanada de Pollo
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Media docena copetín.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="pollo">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Empanada de Pollo', PRECIOS_BOX.empanadas.pollo)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- CEBOLLA CARAMELIZADA -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Empanada de Cebolla Caramelizada
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Media docena copetín.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="cebollaCaramelizada">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val box-qty-zero"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Empanada de Cebolla Caramelizada', PRECIOS_BOX.empanadas.cebollaCaramelizada)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- CUATRO QUESOS -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Empanada Cuatro Quesos
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Media docena copetín.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="cuatroQuesos">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val box-qty-zero"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Empanada Cuatro Quesos', PRECIOS_BOX.empanadas.cuatroQuesos)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- BONDIOLA -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Empanada de Bondiola Braseada
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Media docena copetín.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="bondiolaBraseada">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val box-qty-zero"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Empanada de Bondiola Braseada', PRECIOS_BOX.empanadas.bondiolaBraseada)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- CAPRESE -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Empanada Caprese
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Media docena copetín.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="caprese">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val box-qty-zero"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Empanada Caprese', PRECIOS_BOX.empanadas.caprese)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         SÁNDWICHES
+                         ================================================= -->
+
+                    <div class="box-category box-category-sandwichs">
+
+                        <h3 class="box-subcategory-title">
+                            <i class="fa-solid fa-burger"></i>
+                            Sándwiches
+                        </h3>
+
+                        <div class="menu-accordion-grid">
+
+
+                            <!-- MAYO JAMÓN Y QUESO -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Mini sándwich Mayo, Jamón y Queso
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Mayo, jamón y queso.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="mayoJamonQueso">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val box-qty-zero"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Sándwich Mayo, Jamón y Queso', PRECIOS_BOX.sandwiches.mayoJamonQueso)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- MAYO PESTO -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Mini Sándwich Mayo Pesto, Queso y Tomate
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Mayo pesto, queso y tomate.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="mayoPestoQuesoTomate">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val box-qty-zero"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Sándwich Mayo Pesto, Queso y Tomate', PRECIOS_BOX.sandwiches.mayoPestoQuesoTomate)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- JAMÓN CRUDO -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Mini Sándwich Jamón Crudo, Queso y Rúcula
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Jamón crudo, queso y rúcula.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="jamonCrudoQuesoRucula">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val box-qty-zero"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Sándwich Jamón Crudo, Queso y Rúcula', PRECIOS_BOX.sandwiches.jamonCrudoQuesoRucula)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- BONDIOLA -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Mini Sándwich Bondiola Braseada
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Bondiola braseada con cebollita caramelizada.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="bondiolaSandwich">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val box-qty-zero"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Sándwich Bondiola Braseada', PRECIOS_BOX.sandwiches.bondiolaSandwich)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- CARNE DESMECHADA -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Mini Sándwich Carne Desmechada
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Carne desmechada con chimichurri.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="carneDesmechada">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val box-qty-zero"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Sándwich Carne Desmechada', PRECIOS_BOX.sandwiches.carneDesmechada)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- SALMÓN -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Mini Sándwich Salmón Ahumado
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Salmón ahumado, rúcula y queso crema.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="salmonAhumado">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val box-qty-zero"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Sándwich Salmón Ahumado', PRECIOS_BOX.sandwiches.salmonAhumado)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+
+                            <!-- MINI CHEESE BURGER -->
+
+                            <details class="accordion-item">
+
+                                <summary class="accordion-header">
+
+                                    <span class="prod-name">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Mini Cheese Burger
+                                    </span>
+
+                                    <span class="badge-click">
+                                        Ver detalle
+                                    </span>
+
+                                </summary>
+
+                                <div class="accordion-body">
+
+                                    <p class="desc">
+                                        Mini cheese burger con sus ingredientes.
+                                    </p>
+
+                                    <div class="item-action">
+
+                                        <span class="price box-unit-price"
+                                              data-price-key="miniCheeseBurger">
+                                            Precio a definir
+                                        </span>
+
+                                        <div class="item-controls-inline">
+
+                                            <div class="qty-selector">
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, -1)">
+                                                    -
+                                                </button>
+
+                                                <span
+                                                    class="qty-val box-qty-zero"
+                                                    data-step="6"
+                                                    data-min="6">
+                                                    6
+                                                </span>
+
+                                                <button
+                                                    class="btn-qty-menu"
+                                                    onclick="modificarCantidadBox(this, 1)">
+                                                    +
+                                                </button>
+
+                                            </div>
+
+                                            <button
+                                                class="btn-add"
+                                                onclick="agregarItemBox(this, 'Mini Cheese Burger', PRECIOS_BOX.sandwiches.miniCheeseBurger)">
+                                                + Agregar
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </details>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="info-card" style="text-align: left;">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <h3>¿Cómo Comprar?</h3>
-                    <p>• <strong>Por DM o WhatsApp:</strong> Consultá y hacé tu pedido al 11 7600-6544.</p>
-                    <p>• <strong>De forma presencial:</strong> Visítanos en Luis Pereyra 440, Tigre Centro.</p>
-                    <p>• <strong>Todos los medios de pago:</strong> Efectivo, tarjeta y transferencia.</p>
-                    <p>• <strong>Delivery & Take Away:</strong> Envíos en Tigre Centro.</p>
-                </div>
             </div>
+
         </div>
+
     </section>
+
+  
   <!-- SECCIÓN MENÚ -->
     <section id="menu" class="section">
         <div class="container">
@@ -1122,7 +2628,6 @@
             <input type="radio" name="event-filter" id="tab-parrilla" checked>
             <input type="radio" name="event-filter" id="tab-pizza-party">
             <input type="radio" name="event-filter" id="tab-pernil">
-            <input type="radio" name="event-filter" id="tab-box">
 
 
             <!-- =================================================
@@ -1143,9 +2648,6 @@
                     Pernil de Cerdo
                 </label>
 
-                <label for="tab-box" class="tab-btn">
-                    BOX
-                </label>
 
             </div>
 
@@ -1412,1559 +2914,13 @@
             </div>
 
 
-            <!-- =================================================
-                 BOX
-                 ================================================= -->
 
-            <div class="event-panel cat-event-box">
-
-                <section id="box" class="section">
-
-                    <style>
-
-                        #box .box-subcategory-title {
-                            font-size: 1.35rem;
-                            color: var(--primary-color);
-                            margin: 25px 0 15px;
-                            text-align: left;
-                            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-                            padding-bottom: 10px;
-                        }
-
-                        #box .box-category {
-                            display: none;
-                            width: 100%;
-                        }
-
-                        #box-tab-packs:checked ~ .box-content .box-category-packs {
-                            display: block;
-                        }
-
-                        #box-tab-empanadas:checked ~ .box-content .box-category-empanadas {
-                            display: block;
-                        }
-
-                        #box-tab-sandwichs:checked ~ .box-content .box-category-sandwichs {
-                            display: block;
-                        }
-
-                        #box-tab-packs:checked ~ .tabs-header label[for="box-tab-packs"],
-                        #box-tab-empanadas:checked ~ .tabs-header label[for="box-tab-empanadas"],
-                        #box-tab-sandwichs:checked ~ .tabs-header label[for="box-tab-sandwichs"] {
-                            background: var(--primary-color);
-                            color: #111;
-                            border-color: var(--primary-color);
-                        }
-
-                        #box .box-tabs-container > input[type="radio"] {
-                            display: none;
-                        }
-
-                        #box .box-tabs-container .tabs-header {
-                            margin-bottom: 25px;
-                        }
-
-                        #box .box-category .menu-accordion-grid {
-                            width: 100%;
-                        }
-
-                        #box .box-price-note {
-                            font-size: 0.82rem;
-                            opacity: 0.7;
-                            margin-top: 5px;
-                        }
-
-                        #box .box-qty-zero {
-                            color: var(--primary-color);
-                        }
-
-                    </style>
-
-
-                    <div class="container">
-
-                        <div class="section-title">
-
-                            <span class="sub-title">Finger Foods</span>
-
-                            <h2>Armá tu Box</h2>
-
-                            <p>
-                                Elegí tu Box armado listo para compartir!! <br>
-                                O armalo a tu gusto con nuestras Empanaditas,
-                                mini sándwiches y finger foods ideales para
-                                picadas, reuniones y eventos.<br>
-                                (se reserva con 48 hs de anticipacion).
-                            </p>
-
-                        </div>
-
-
-                        <!-- =================================================
-                             PESTAÑAS INTERNAS DEL BOX
-                             ================================================= -->
-
-                        <div class="box-tabs-container">
-
-                            <input type="radio"
-                                   name="box-filter"
-                                   id="box-tab-packs"
-                                   checked>
-
-                            <input type="radio"
-                                   name="box-filter"
-                                   id="box-tab-empanadas">
-
-                            <input type="radio"
-                                   name="box-filter"
-                                   id="box-tab-sandwichs">
-
-
-                            <div class="tabs-header">
-
-                                <label for="box-tab-packs" class="tab-btn">
-                                    Packs Armados
-                                </label>
-
-                                <label for="box-tab-empanadas" class="tab-btn">
-                                    Empanadas
-                                </label>
-
-                                <label for="box-tab-sandwichs" class="tab-btn">
-                                    Sándwiches
-                                </label>
-
-                            </div>
-
-
-                            <!-- =================================================
-                                 CONTENIDO DEL BOX
-                                 ================================================= -->
-
-                            <div class="box-content">
-
-
-                                <!-- =================================================
-                                     PACKS ARMADOS
-                                     ================================================= -->
-
-                                <div class="box-category box-category-packs">
-
-                                    <h3 class="box-subcategory-title">
-                                        <i class="fa-solid fa-box-open"></i>
-                                        Packs Armados
-                                    </h3>
-
-                                    <div class="menu-accordion-grid">
-
-
-                                        <!-- BOX PARA DOS -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Box para Dos
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    8 empanaditas a elección,
-                                                    4 mini cheese burger,
-                                                    4 sándwiches de mayo,
-                                                    jamón y queso y
-                                                    4 sándwiches de mayo pesto,
-                                                    queso y tomate.
-                                                </p>
-
-                                                <div class="box-gustos">
-
-                                                    <div class="box-gustos-header">
-
-                                                        <strong>
-                                                            Elegí tus empanaditas
-                                                        </strong>
-
-                                                        <span class="box-gustos-contador">
-                                                            <span class="gustos-total">0</span> / 8
-                                                        </span>
-
-                                                    </div>
-
-                                                    <button
-                                                        type="button"
-                                                        class="btn-mostrar-gustos"
-                                                        onclick="mostrarGustosBox(this)">
-                                                        <i class="fa-solid fa-plus"></i>
-                                                        Elegir gustos
-                                                    </button>
-
-                                                    <div class="gustos-panel">
-
-                                                        <div class="gusto-row">
-                                                            <span>Carne cortada a cuchillo</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Jamón y queso</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Espinaca y salsa blanca</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Pollo</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Cebolla caramelizada</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Cuatro quesos</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Bondiola braseada</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Caprese</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="gustos-resumen"></div>
-
-                                                </div>
-
-                                                <div class="item-action">
-
-                                                    <span class="price">
-                                                        $54.300
-                                                    </span>
-
-                                                    <button
-                                                        class="btn-add"
-                                                        onclick="agregarBoxConGustos(this, 'Box para Dos', 54300, 8)">
-                                                        + Agregar
-                                                    </button>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- BOX PARA CUATRO -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Box para Cuatro
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    16 empanaditas a elección,
-                                                    6 mini cheese burgers,
-                                                    6 sándwiches de mayo,
-                                                    jamón y queso,
-                                                    6 sándwiches de mayo pesto,
-                                                    queso y tomate y
-                                                    6 sándwiches de jamón crudo,
-                                                    rúcula y queso crema.
-                                                </p>
-
-                                                <div class="box-gustos">
-
-                                                    <div class="box-gustos-header">
-
-                                                        <strong>
-                                                            Elegí tus empanaditas
-                                                        </strong>
-
-                                                        <span class="box-gustos-contador">
-                                                            <span class="gustos-total">0</span> / 16
-                                                        </span>
-
-                                                    </div>
-
-                                                    <button
-                                                        type="button"
-                                                        class="btn-mostrar-gustos"
-                                                        onclick="mostrarGustosBox(this)">
-                                                        <i class="fa-solid fa-plus"></i>
-                                                        Elegir gustos
-                                                    </button>
-
-                                                    <div class="gustos-panel">
-
-                                                        <div class="gusto-row">
-                                                            <span>Carne cortada a cuchillo</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Jamón y queso</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Espinaca y salsa blanca</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Pollo</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Cebolla caramelizada</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Cuatro quesos</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Bondiola braseada</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="gusto-row">
-                                                            <span>Caprese</span>
-                                                            <div class="gusto-control">
-                                                                <button type="button" onclick="cambiarGusto(this,-1)">−</button>
-                                                                <span class="gusto-cantidad">0</span>
-                                                                <button type="button" onclick="cambiarGusto(this,1)">+</button>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="gustos-resumen"></div>
-
-                                                </div>
-
-                                                <div class="item-action">
-
-                                                    <span class="price">
-                                                        $110.000
-                                                    </span>
-
-                                                    <button
-                                                        class="btn-add"
-                                                        onclick="agregarBoxConGustos(this, 'Box para Cuatro', 110000, 16)">
-                                                        + Agregar
-                                                    </button>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- =================================================
-                                     EMPANADAS
-                                     ================================================= -->
-
-                                <div class="box-category box-category-empanadas">
-
-                                    <h3 class="box-subcategory-title">
-                                        <i class="fa-solid fa-pizza-slice"></i>
-                                        Empanadas
-                                    </h3>
-
-                                    <div class="menu-accordion-grid">
-
-
-                                        <!-- CARNE A CUCHILLO -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Empanada de Carne a Cuchillo
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Media docena copetín.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="carneCuchillo">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Empanada de Carne a Cuchillo', PRECIOS_BOX.empanadas.carneCuchillo)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- JAMÓN Y QUESO -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Empanada de Jamón y Queso
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Media docena copetín.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="jamonQueso">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Empanada de Jamón y Queso', PRECIOS_BOX.empanadas.jamonQueso)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- ESPINACA -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Empanada de Espinaca y Salsa Blanca
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Media docena copetín.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="espinacaSalsaBlanca">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Empanada de Espinaca y Salsa Blanca', PRECIOS_BOX.empanadas.espinacaSalsaBlanca)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- POLLO -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Empanada de Pollo
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Media docena copetín.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="pollo">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Empanada de Pollo', PRECIOS_BOX.empanadas.pollo)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- CEBOLLA CARAMELIZADA -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Empanada de Cebolla Caramelizada
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Media docena copetín.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="cebollaCaramelizada">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val box-qty-zero"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Empanada de Cebolla Caramelizada', PRECIOS_BOX.empanadas.cebollaCaramelizada)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- CUATRO QUESOS -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Empanada Cuatro Quesos
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Media docena copetín.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="cuatroQuesos">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val box-qty-zero"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Empanada Cuatro Quesos', PRECIOS_BOX.empanadas.cuatroQuesos)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- BONDIOLA -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Empanada de Bondiola Braseada
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Media docena copetín.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="bondiolaBraseada">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val box-qty-zero"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Empanada de Bondiola Braseada', PRECIOS_BOX.empanadas.bondiolaBraseada)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- CAPRESE -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Empanada Caprese
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Media docena copetín.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="caprese">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val box-qty-zero"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Empanada Caprese', PRECIOS_BOX.empanadas.caprese)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- =================================================
-                                     SÁNDWICHES
-                                     ================================================= -->
-
-                                <div class="box-category box-category-sandwichs">
-
-                                    <h3 class="box-subcategory-title">
-                                        <i class="fa-solid fa-burger"></i>
-                                        Sándwiches
-                                    </h3>
-
-                                    <div class="menu-accordion-grid">
-
-
-                                        <!-- MAYO JAMÓN Y QUESO -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Mini sándwich Mayo, Jamón y Queso
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Mayo, jamón y queso.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="mayoJamonQueso">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val box-qty-zero"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Sándwich Mayo, Jamón y Queso', PRECIOS_BOX.sandwiches.mayoJamonQueso)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- MAYO PESTO -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Mini Sándwich Mayo Pesto, Queso y Tomate
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Mayo pesto, queso y tomate.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="mayoPestoQuesoTomate">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val box-qty-zero"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Sándwich Mayo Pesto, Queso y Tomate', PRECIOS_BOX.sandwiches.mayoPestoQuesoTomate)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- JAMÓN CRUDO -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Mini Sándwich Jamón Crudo, Queso y Rúcula
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Jamón crudo, queso y rúcula.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="jamonCrudoQuesoRucula">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val box-qty-zero"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Sándwich Jamón Crudo, Queso y Rúcula', PRECIOS_BOX.sandwiches.jamonCrudoQuesoRucula)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- BONDIOLA -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Mini Sándwich Bondiola Braseada
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Bondiola braseada con cebollita caramelizada.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="bondiolaSandwich">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val box-qty-zero"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Sándwich Bondiola Braseada', PRECIOS_BOX.sandwiches.bondiolaSandwich)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- CARNE DESMECHADA -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Mini Sándwich Carne Desmechada
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Carne desmechada con chimichurri.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="carneDesmechada">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val box-qty-zero"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Sándwich Carne Desmechada', PRECIOS_BOX.sandwiches.carneDesmechada)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- SALMÓN -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Mini Sándwich Salmón Ahumado
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Salmón ahumado, rúcula y queso crema.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="salmonAhumado">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val box-qty-zero"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Sándwich Salmón Ahumado', PRECIOS_BOX.sandwiches.salmonAhumado)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-
-                                        <!-- MINI CHEESE BURGER -->
-
-                                        <details class="accordion-item">
-
-                                            <summary class="accordion-header">
-
-                                                <span class="prod-name">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                    Mini Cheese Burger
-                                                </span>
-
-                                                <span class="badge-click">
-                                                    Ver detalle
-                                                </span>
-
-                                            </summary>
-
-                                            <div class="accordion-body">
-
-                                                <p class="desc">
-                                                    Mini cheese burger con sus ingredientes.
-                                                </p>
-
-                                                <div class="item-action">
-
-                                                    <span class="price box-unit-price"
-                                                          data-price-key="miniCheeseBurger">
-                                                        Precio a definir
-                                                    </span>
-
-                                                    <div class="item-controls-inline">
-
-                                                        <div class="qty-selector">
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, -1)">
-                                                                -
-                                                            </button>
-
-                                                            <span
-                                                                class="qty-val box-qty-zero"
-                                                                data-step="6"
-                                                                data-min="6">
-                                                                6
-                                                            </span>
-
-                                                            <button
-                                                                class="btn-qty-menu"
-                                                                onclick="modificarCantidadBox(this, 1)">
-                                                                +
-                                                            </button>
-
-                                                        </div>
-
-                                                        <button
-                                                            class="btn-add"
-                                                            onclick="agregarItemBox(this, 'Mini Cheese Burger', PRECIOS_BOX.sandwiches.miniCheeseBurger)">
-                                                            + Agregar
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </details>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </div>
 
         </div>
 
     </div>
 
 </section>
-</div>
-   
-    </section>
 
     <!-- SECCIÓN CARRITO CON FORMULARIO -->
     <section id="carrito" class="section bg-darker">
@@ -3092,6 +3048,43 @@
                     <i class="fa-solid fa-cake-candles"></i>
                     <h3>Fiestas Privadas</h3>
                     <p>Armamos un menú a la medida de tu cumpleaños o reunión familiar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN QUIÉNES SOMOS -->
+    <section id="quienes-somos" class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">QUIÉNES SOMOS</span>
+                <h2>Nuestra Esencia</h2>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card" style="text-align: left;">
+                    <i class="fa-solid fa-heart"></i>
+                    <h3>¿Quiénes Somos?</h3>
+                    <p>Somos una pareja de cocineros que buscamos dar lo mejor de nosotros cada día.</p>
+                    <p>Nos distingue la calidad, la frescura y el amor en cada producto que ofrecemos.</p>
+                </div>
+
+                <div class="info-card" style="text-align: left;">
+                    <i class="fa-solid fa-bell-concierge"></i>
+                    <h3>¿Qué Ofrecemos?</h3>
+                    <p>• <strong>Menú a la carta:</strong> Platos preparados al momento.</p>
+                    <p>• <strong>Menú del día:</strong> Variedad y precio accesible.</p>
+                    <p>• <strong>Productos distintos cada día:</strong> Siempre algo nuevo para descubrir.</p>
+                    <p>• <strong>Catering para eventos:</strong> Personales, privados y corporativos.</p>
+                </div>
+
+                <div class="info-card" style="text-align: left;">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <h3>¿Cómo Comprar?</h3>
+                    <p>• <strong>Por DM o WhatsApp:</strong> Consultá y hacé tu pedido al 11 7600-6544.</p>
+                    <p>• <strong>De forma presencial:</strong> Visítanos en Luis Pereyra 440, Tigre Centro.</p>
+                    <p>• <strong>Todos los medios de pago:</strong> Efectivo, tarjeta y transferencia.</p>
+                    <p>• <strong>Delivery & Take Away:</strong> Envíos en Tigre Centro.</p>
                 </div>
             </div>
         </div>

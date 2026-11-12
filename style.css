@@ -267,11 +267,12 @@ body {
 #tab-wraps:checked ~ .tabs-header label[for="tab-wraps"],
 #tab-menu-dia:checked ~ .tabs-header label[for="tab-menu-dia"],
 #tab-minutas:checked ~ .tabs-header label[for="tab-minutas"],
-#tab-adicionales:checked ~ .tabs-header label[for="tab-adicionales"],
 #tab-ensaladas:checked ~ .tabs-header label[for="tab-ensaladas"],
 #tab-empanadas:checked ~ .tabs-header label[for="tab-empanadas"],
 #tab-tartas:checked ~ .tabs-header label[for="tab-tartas"],
-#tab-sandwichs:checked ~ .tabs-header label[for="tab-sandwichs"] {
+#tab-sandwichs:checked ~ .tabs-header label[for="tab-sandwichs"],
+#tab-tostados:checked ~ .tabs-header label[for="tab-tostados"],
+#tab-bebidas:checked ~ .tabs-header label[for="tab-bebidas"] {
     background: var(--accent);
     color: var(--bg-main);
     border-color: var(--accent);
@@ -379,11 +380,12 @@ details[open] .prod-name i {
 #tab-wraps:checked ~ .menu-accordion-grid .accordion-item:not(.cat-wraps),
 #tab-menu-dia:checked ~ .menu-accordion-grid .accordion-item:not(.cat-menu-dia),
 #tab-minutas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-minutas),
-#tab-adicionales:checked ~ .menu-accordion-grid .accordion-item:not(.cat-adicionales),
 #tab-ensaladas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-ensaladas),
 #tab-empanadas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-empanadas),
 #tab-tartas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-tartas),
-#tab-sandwichs:checked ~ .menu-accordion-grid .accordion-item:not(.cat-sandwichs) {
+#tab-sandwichs:checked ~ .menu-accordion-grid .accordion-item:not(.cat-sandwichs),
+#tab-tostados:checked ~ .menu-accordion-grid .accordion-item:not(.cat-tostados),
+#tab-bebidas:checked ~ .menu-accordion-grid .accordion-item:not(.cat-bebidas) {
     display: none;
 }
 
